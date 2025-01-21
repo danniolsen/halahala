@@ -19,7 +19,6 @@ const MatchCardContent = ({ date, children, venue }: Props) => {
       </div>
 
       <div className="pb-4 grid grid-cols-5">{children}</div>
-
       <div className="px-4 mt-1 pb-2 w-full">
         <p className="text-xs text-slate-400">{venue?.name}</p>
       </div>

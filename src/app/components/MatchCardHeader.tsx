@@ -6,6 +6,7 @@ import {
 } from "@/src/app/utils/competitionAssets";
 type Props = {
   competition: CompetitionType;
+  isFetching?: boolean;
 };
 
 const MatchCardHeader = ({ competition }: Props) => {

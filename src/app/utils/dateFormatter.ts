@@ -21,6 +21,17 @@ const checkDateRange = (inputDate: Date): DateReturnType => {
   const range24 = rangeStart + 24 * 60 * 60 * 1000; // 24 hours from now is
   const range48 = rangeStart + 48 * 60 * 60 * 1000; // 48 hours from now
 
+  const format = new Date(inputDate);
+
+  // tix this when tomorrow is a new month or year
+  const isTodaTest =
+    format.getDay() === now.getDay() &&
+    format.getMonth() + 1 === now.getMonth() + 1;
+
+  const isTomorrowTest =
+    now.getDay() + 1 === format.getDay() &&
+    now.getMonth() + 1 === format.getMonth() + 1;
+
   const hours = inputDate.getHours().toString().padStart(2, "0");
   const minutes = inputDate.getMinutes().toString().padStart(2, "0");
 
@@ -30,8 +41,8 @@ const checkDateRange = (inputDate: Date): DateReturnType => {
 
   returnFormat.time = `${hours}:${minutes}`;
 
-  if (isToday) returnFormat.date = "Today";
-  if (isTomorrow) returnFormat.date = "Tomorrow";
+  if (isTodaTest) returnFormat.date = "Today";
+  if (isTomorrowTest) returnFormat.date = "Tomorrow";
   if (isPastOrFuture) {
     const day = inputDate.getDate().toString().padStart(2);
     const month = inputDate.getUTCMonth() + 1;
