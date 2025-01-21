@@ -5,7 +5,6 @@ import CopaReyLogo from "../../../public/copa-del-rey.svg";
 import NoLogo from "../../../public/noLogo.svg";
 
 import {
-  competitionMap,
   getCompetitionColor,
   getCompetitionLogo,
   getCompetitionName,
