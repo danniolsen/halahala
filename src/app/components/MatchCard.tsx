@@ -36,7 +36,7 @@ const MatchCard = ({
             <p className="text-lg">{competition?.name}</p>
           </div>
           <div className="flex justify-center mt-4 mb-2">
-            <p className="text-xs">{checkDateRange(date)}</p>
+            <p className="text-xs">{checkDateRange(new Date(date))}</p>
           </div>
         </header>
 
