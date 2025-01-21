@@ -44,8 +44,8 @@ const checkDateRange = (inputDate: Date): DateReturnType => {
   if (isTodaTest) returnFormat.date = "Today";
   if (isTomorrowTest) returnFormat.date = "Tomorrow";
   if (isPastOrFuture) {
-    const day = inputDate.getDate().toString().padStart(2);
-    const month = inputDate.getUTCMonth() + 1;
+    // const day = inputDate.getDate().toString().padStart(2);
+    // const month = inputDate.getUTCMonth() + 1;
 
     const fullDate = new Intl.DateTimeFormat("en-UK", {
       dateStyle: "medium",

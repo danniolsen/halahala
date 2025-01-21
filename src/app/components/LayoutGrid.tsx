@@ -1,17 +1,15 @@
 "use client";
-import { useQuery } from "@tanstack/react-query";
-import fetcher from "@/src/app/utils/fetcher";
-import { MatchType } from "../types/Match.type";
+
 import MatchCardList from "./MatchCardList";
 
-const limit = 7;
+//const limit = 7;
 
 const LayoutGrid = () => {
-  const { data: previousMatches, isFetching: isIt } = useQuery({
+  /*const { data: previousMatches, isFetching: isIt } = useQuery({
     queryKey: ["playedMatches", limit],
     queryFn: () =>
       fetcher({ status: "played", orderType: "desc", limit: limit }),
-  });
+  });*/
 
   return (
     <div>

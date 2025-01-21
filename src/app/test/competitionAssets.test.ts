@@ -23,7 +23,8 @@ const copaRey: CompetitionType = {
 };
 
 const faulty: CompetitionType = {
-  name: "wrong name" as any,
+  // @ts-expect-error test with wrong type of string
+  name: "wrong name",
 };
 
 describe("Should return a competitions assets based on competition", () => {
