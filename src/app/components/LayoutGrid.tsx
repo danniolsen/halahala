@@ -4,7 +4,7 @@ import fetcher from "@/src/app/utils/fetcher";
 import { MatchType } from "../types/Match.type";
 import MatchCard from "./MatchCard";
 
-const limit = 20;
+const limit = 6;
 
 type ResponseType = {
   matches: MatchType[];
@@ -17,7 +17,7 @@ const LayoutGrid = () => {
       fetcher({ status: "notplayed", orderType: "asc", limit: limit }),
   });
 
-  const { data: played, isFetching: isIt } = useQuery<ResponseType[] | Error>({
+  const { data: played, isFetching: isIt } = useQuery({
     queryKey: ["playedMatches", limit],
     queryFn: () =>
       fetcher({ status: "played", orderType: "desc", limit: limit }),

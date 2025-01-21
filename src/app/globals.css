@@ -8,6 +8,8 @@
   --la-liga: #ff4b44;
   --champions-league: #010256;
   --copa-del-rey: #dda065;
+  --super-copa: #15151e;
+  --fifa-club: #f9d66b;
 }
 
 @media (prefers-color-scheme: dark) {
