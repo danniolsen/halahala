@@ -15,14 +15,12 @@ const Page = async () => {
     queryKey: ["upcommingMatches", limit],
     queryFn: () =>
       fetcher({ status: "notplayed", orderType: "asc", limit: limit }),
-    staleTime: Infinity,
   });
 
   await queryClient.prefetchQuery({
     queryKey: ["playedMatches", limit],
     queryFn: () =>
       fetcher({ status: "played", orderType: "desc", limit: limit }),
-    staleTime: Infinity,
   });
 
   return (
