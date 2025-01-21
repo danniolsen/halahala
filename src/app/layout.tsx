@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className} antialiased bg-[url('../../public/bg.png')] w-svw h-svh px-4 my-4`}
+        className={`${roboto.className} antialiased bg-[url('../../public/bg.png')] w-svw h-svh px-4`}
       >
         <Providers>{children}</Providers>
       </body>

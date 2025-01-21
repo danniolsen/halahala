@@ -1,7 +1,8 @@
-import type { MatchType, CompetitionType } from "@/src/app/types/Match.type";
+import type { MatchType } from "@/src/app/types/Match.type";
 import MatchCardHeader from "@/src/app/components/MatchCardHeader";
 import { getCompetitionColor } from "@/src/app/utils/competitionAssets";
-import MatchCardContent from "./MatchCardContent";
+import MatchCardContent from "@/src/app/components/MatchCardContent";
+import MatchCardTeam from "@/src/app/components/MatchCardTeam";
 
 const MatchCard = ({
   id,
@@ -20,7 +21,14 @@ const MatchCard = ({
     <section className={`${bgColor} rounded-t-xl rounded-b-2xl`}>
       <MatchCardHeader competition={competition} />
 
-      <MatchCardContent date={date} />
+      <MatchCardContent date={date}>
+        <MatchCardTeam team={home_team} />
+        <div className="col-start-3">
+          {/* Create score component */}
+          <p>Score here</p>
+        </div>
+        <MatchCardTeam team={away_team} />
+      </MatchCardContent>
     </section>
   );
 };
