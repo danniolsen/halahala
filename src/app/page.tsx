@@ -6,7 +6,7 @@ import {
 import LayoutGrid from "@/src/app/components/LayoutGrid";
 import fetcher from "@/src/app/utils/fetcher";
 
-export default async function PostsPage() {
+const Page = async () => {
   const queryClient = new QueryClient();
 
   const limit = 6;
@@ -15,12 +15,14 @@ export default async function PostsPage() {
     queryKey: ["upcommingMatches", limit],
     queryFn: () =>
       fetcher({ status: "notplayed", orderType: "asc", limit: limit }),
+    staleTime: Infinity,
   });
 
   await queryClient.prefetchQuery({
     queryKey: ["playedMatches", limit],
     queryFn: () =>
       fetcher({ status: "played", orderType: "desc", limit: limit }),
+    staleTime: Infinity,
   });
 
   return (
@@ -28,4 +30,6 @@ export default async function PostsPage() {
       <LayoutGrid />
     </HydrationBoundary>
   );
-}
+};
+
+export default Page;

@@ -11,6 +11,9 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "la-liga": "var(--la-liga)",
+        "champions-league": "var(--champions-league)",
+        "copa-del-rey": "var(--copa-del-rey)",
       },
     },
   },
