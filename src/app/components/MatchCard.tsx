@@ -1,9 +1,7 @@
-import Image from "next/image";
-import checkDateRange from "@/src/app/utils/dateFormatter";
 import type { MatchType, CompetitionType } from "@/src/app/types/Match.type";
-import type { DateReturnType } from "@/src/app/types/types";
 import MatchCardHeader from "@/src/app/components/MatchCardHeader";
 import { getCompetitionColor } from "@/src/app/utils/competitionAssets";
+import MatchCardContent from "./MatchCardContent";
 
 const MatchCard = ({
   id,
@@ -16,28 +14,20 @@ const MatchCard = ({
   away_score,
   date,
 }: MatchType) => {
-  // show today, tomorrow, or date
-
-  const findCompetitionLogo = ({ name }: CompetitionType) => {
-    // return competitionMap[name] || NoLogo;
-  };
-
-  const dateAndTime: DateReturnType = checkDateRange(new Date(date));
-
   const bgColor = getCompetitionColor(competition);
 
   return (
     <section className={`${bgColor} rounded-t-xl rounded-b-2xl`}>
       <MatchCardHeader competition={competition} />
 
-      <div className="bg-white p-2 rounded-xl">content</div>
+      <MatchCardContent date={date} />
     </section>
   );
 };
 
 export default MatchCard;
 
-type Props = {
+/*type Props = {
   nickname: string;
   badge: string;
   score: number | undefined;
@@ -59,7 +49,7 @@ const TeamBadge = ({ nickname, badge, score }: Props) => {
     </div>
   );
 };
-
+*/
 /**
   <Image
           src={findCompetitionLogo({ name: competition?.name || null })}

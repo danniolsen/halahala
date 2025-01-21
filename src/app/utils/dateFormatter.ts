@@ -28,25 +28,20 @@ const checkDateRange = (inputDate: Date): DateReturnType => {
   const isTomorrow = inputTime > range24 && inputTime <= range48;
   const isPastOrFuture = !isToday && !isTomorrow;
 
-  /*if (inputTime >= rangeStart && inputTime <= range24) {
-    return `Today - ${hours}:${minutes}`;
-  } else if (inputTime > range24 && inputTime <= range48) {
-    return `Tomorrow - ${hours}:${minutes}`;
-  } else {
-    const day = inputDate.getDate().toString().padStart(2);
-    const month = (inputDate.getMonth() + 1).toString().padStart(2, "0");
-    const formattedMonth = month.charAt(0) === "0" ? month.charAt(1) : month;
-    */
-
   returnFormat.time = `${hours}:${minutes}`;
 
   if (isToday) returnFormat.date = "Today";
   if (isTomorrow) returnFormat.date = "Tomorrow";
   if (isPastOrFuture) {
     const day = inputDate.getDate().toString().padStart(2);
-    const month = (inputDate.getMonth() + 1).toString().padStart(2, "0");
-    const formattedMonth = month.charAt(0) === "0" ? month.charAt(1) : month;
-    returnFormat.date = `${day}/${formattedMonth}`;
+    const month = inputDate.getUTCMonth() + 1;
+
+    const fullDate = new Intl.DateTimeFormat("en-UK", {
+      dateStyle: "medium",
+    }).format(inputDate);
+    const parts = fullDate.split(" ");
+
+    returnFormat.date = `${parts[0]} ${parts[1]}`;
   }
 
   return returnFormat;
