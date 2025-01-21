@@ -4,7 +4,7 @@ import fetcher from "@/src/app/utils/fetcher";
 import { MatchType } from "../types/Match.type";
 import MatchCard from "./MatchCard";
 
-const limit = 7;
+const limit = 20;
 
 type ResponseType = {
   matches: MatchType[];
@@ -34,7 +34,7 @@ const LayoutGrid = () => {
   );
 
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-4 mb-4">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-4 py-4">
       {filteredMatches?.map(
         ({
           id,

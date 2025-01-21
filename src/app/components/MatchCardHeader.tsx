@@ -13,14 +13,14 @@ const MatchCardHeader = ({ competition }: Props) => {
   const imageSrc = getCompetitionLogo(competition);
 
   return (
-    <header className="py-2 px-4 rounded-t-xl flex justify-between">
-      <div>
-        <p className="text-white font-semibold">{competitionName}</p>
-      </div>
+    <header className="py-2 px-4 rounded-t-xl flex justify-between items-center">
+      <p className="text-white font-semibold">{competitionName}</p>
+
       <Image
         src={imageSrc}
-        width={20}
+        width={undefined}
         height={20}
+        priority
         alt={`${competitionName} logo`}
       />
     </header>
@@ -28,8 +28,3 @@ const MatchCardHeader = ({ competition }: Props) => {
 };
 
 export default MatchCardHeader;
-
-// color heaer based on competition
-// la liga #ff4b44
-// ucl #0330f7 - #010256
-// cdl #be052f

@@ -6,18 +6,18 @@ type ResizesType = {
   xlarge: string;
 };
 
-type ShieldType = {
+export type ShieldType = {
   id: number;
   resizes: ResizesType;
   caption: string;
 };
 
-type TeamType = {
-  id: number;
+export type TeamType = {
+  id?: number;
   name?: string;
   nickname: string;
-  color: string;
-  color_secondary: string;
+  color?: string;
+  color_secondary?: string;
   shield: ShieldType;
 };
 
@@ -32,11 +32,11 @@ type VenueType = {
 
 /* Full match type */
 export type MatchType = {
-  id: number;
+  id?: number;
   date: string;
   competition: CompetitionType;
-  home_score?: number;
-  away_score?: number;
+  home_score: number;
+  away_score: number;
   status: string;
   home_team: TeamType;
   away_team: TeamType;
