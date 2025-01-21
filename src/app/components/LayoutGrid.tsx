@@ -1,18 +1,13 @@
 "use client";
-
-import MatchCardList from "./MatchCardList";
-
-//const limit = 7;
+import PastMatchList from "@/src/app/components/PastMatchList";
+import MatchCardList from "@/src/app/components/MatchCardList";
 
 const LayoutGrid = () => {
-  /*const { data: previousMatches, isFetching: isIt } = useQuery({
-    queryKey: ["playedMatches", limit],
-    queryFn: () =>
-      fetcher({ status: "played", orderType: "desc", limit: limit }),
-  });*/
-
   return (
     <div>
+      <div className="py-4">
+        <PastMatchList />
+      </div>
       <div className="py-4 px-4">
         <p className="text-2xl font-bold">Upcoming matches</p>
       </div>
