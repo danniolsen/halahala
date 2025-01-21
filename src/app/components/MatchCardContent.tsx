@@ -1,13 +1,14 @@
 import type { DateReturnType } from "@/src/app/types/types";
+import type { VenueType } from "@/src/app/types/Match.type";
 import checkDateRange from "@/src/app/utils/dateFormatter";
-import MatchCardTeam from "@/src/app/components/MatchCardTeam";
 
 type Props = {
   date: string;
   children: React.ReactNode;
+  venue: VenueType;
 };
 
-const MatchCardContent = ({ date, children }: Props) => {
+const MatchCardContent = ({ date, children, venue }: Props) => {
   const dateAndTime: DateReturnType = checkDateRange(new Date(date));
 
   return (
@@ -17,7 +18,11 @@ const MatchCardContent = ({ date, children }: Props) => {
         <p>{dateAndTime?.time}</p>
       </div>
 
-      <div className="pb-4 px-4 grid grid-cols-5 space-x-1">{children}</div>
+      <div className="pb-4 grid grid-cols-5">{children}</div>
+
+      <div className="px-4 mt-1 pb-2 w-full">
+        <p className="text-xs text-slate-400">{venue?.name}</p>
+      </div>
     </section>
   );
 };

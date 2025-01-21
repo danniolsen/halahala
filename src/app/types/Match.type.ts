@@ -25,7 +25,7 @@ export type CompetitionType = {
   name: "LALIGA EA SPORTS" | "UEFA Champions League" | "Copa del Rey";
 };
 
-type VenueType = {
+export type VenueType = {
   id: number;
   name: string;
 };

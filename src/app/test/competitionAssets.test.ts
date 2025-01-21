@@ -40,7 +40,7 @@ describe("Should return a competitions assets based on competition", () => {
     expect(getCompetitionColor(laLiga)).toEqual("bg-la-liga");
     expect(getCompetitionColor(ucl)).toEqual("bg-champions-league");
     expect(getCompetitionColor(copaRey)).toEqual("bg-copa-del-rey");
-    expect(getCompetitionColor(faulty)).toEqual("bg-grey-400");
+    expect(getCompetitionColor(faulty)).toEqual("bg-gray-400");
   });
 
   // logos
