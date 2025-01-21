@@ -1,6 +1,14 @@
+type ResizesType = {
+  xsmall: string;
+  small: string;
+  medium: string;
+  large: string;
+  xlarge: string;
+};
+
 type ShieldType = {
   id: number;
-  url: string;
+  resizes: ResizesType;
   caption: string;
 };
 

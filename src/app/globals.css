@@ -5,6 +5,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --la-liga: #ff4b44;
+  --champions-league: #010256;
+  --copa-del-rey: #dda065;
 }
 
 @media (prefers-color-scheme: dark) {
