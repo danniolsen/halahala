@@ -26,19 +26,27 @@ const yesterDayMonthFormatted =
 
 describe("Should test that date formatter displays correctly", () => {
   test("test that today and tomorrow plus hour:min is displayed", () => {
-    expect(dateFormatter(currentDate)).toBe("Today - 21:00");
-    expect(dateFormatter(tomorrow)).toBe("Tomorrow - 21:00");
-    expect(dateFormatter(nextWeek)).toBe(
-      `${nextWeekDay}/${nextWeekMonthFormatted} - 16:30`
-    );
-    expect(dateFormatter(yesterDay)).toBe(
-      `${yesterDayDay}/${yesterDayMonthFormatted} - 14:45`
-    );
+    expect(dateFormatter(currentDate)).toEqual({
+      date: "Today",
+      time: "21:00",
+    });
+    expect(dateFormatter(tomorrow)).toEqual({
+      date: "Tomorrow",
+      time: "21:00",
+    });
+    expect(dateFormatter(nextWeek)).toEqual({
+      date: `${nextWeekDay}/${nextWeekMonthFormatted}`,
+      time: "16:30",
+    });
+    expect(dateFormatter(yesterDay)).toEqual({
+      date: `${yesterDayDay}/${yesterDayMonthFormatted}`,
+      time: "14:45",
+    });
   });
 
   test("Should return a dash is input date is invalid", () => {
-    expect(dateFormatter(null as any)).toBe("-");
-    expect(dateFormatter(undefined as any)).toBe("-");
-    expect(dateFormatter("2025" as any)).toBe("-");
+    expect(dateFormatter(null as any)).toEqual({ date: "-", time: "" });
+    expect(dateFormatter(undefined as any)).toEqual({ date: "-", time: "" });
+    expect(dateFormatter("2025" as any)).toEqual({ date: "-", time: "" });
   });
 });

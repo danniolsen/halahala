@@ -4,7 +4,8 @@ import ChampionsLogo from "../../../public/champions-league.svg";
 import CopaReyLogo from "../../../public/copa-del-rey.svg";
 import NoLogo from "../../../public/noLogo.svg";
 import checkDateRange from "@/src/app/utils/dateFormatter";
-import { MatchType, CompetitionType } from "../types/Match.type";
+import type { MatchType, CompetitionType } from "@/src/app/types/Match.type";
+import type { DateReturnType } from "@/src/app/types/types";
 
 const MatchCard = ({
   id,
@@ -28,6 +29,8 @@ const MatchCard = ({
     return competitionMap[name] || NoLogo;
   };
 
+  const dateAndTime: DateReturnType = checkDateRange(new Date(date));
+
   return (
     <div className={`w-full rounded-xl bg-white p-2`}>
       <div className="p-2 rounded-lg">
@@ -36,7 +39,8 @@ const MatchCard = ({
             <p className="text-lg">{competition?.name}</p>
           </div>
           <div className="flex justify-center mt-4 mb-2">
-            <p className="text-xs">{checkDateRange(new Date(date))}</p>
+            <p className="text-xs">{dateAndTime?.date}</p>
+            <p className="text-xs">{dateAndTime?.time}</p>
           </div>
         </header>
 
