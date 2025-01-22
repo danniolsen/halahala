@@ -8,7 +8,7 @@ import MatchCardTeam from "@/src/app/components/MatchCardTeam";
 import MatchCardScore from "@/src/app/components/MatchCardScore";
 import MatchCardShimmer from "@/src/app/components/MatchCardShimmer";
 
-const limit = 6;
+const limit = 7;
 const currentYear = new Date().getFullYear();
 const yearThreshold = currentYear - 1;
 
@@ -38,7 +38,6 @@ const MatchCardList = () => {
           home_score,
           venue,
           date,
-          status,
         }) => {
           const bgColor = getCompetitionColor(competition);
           return (
@@ -50,7 +49,6 @@ const MatchCardList = () => {
                 <MatchCardScore
                   home_score={home_score}
                   away_score={away_score}
-                  status={status}
                 />
                 <MatchCardTeam team={away_team} />
               </MatchCardContent>

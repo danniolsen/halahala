@@ -37,8 +37,12 @@ export type MatchType = {
   competition: CompetitionType;
   home_score: number;
   away_score: number;
-  status: string;
+  status: StatusType;
   home_team: TeamType;
   away_team: TeamType;
   venue: VenueType;
+};
+
+export type StatusType = {
+  status?: "FirstHalf" | "HalfTime" | "SecondHalf" | "FullTime" | "PreMatch";
 };

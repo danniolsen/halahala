@@ -1,23 +1,14 @@
 import { CompetitionType } from "../types/Match.type";
 import Image from "next/image";
 import { getCompetitionLogo } from "../utils/competitionAssets";
-import cn from "@/src/app/utils/cn";
 
 type Props = {
   home_score: number;
   away_score: number;
-  status: string;
   competition?: CompetitionType;
 };
 
-const MatchCardScore = ({
-  home_score,
-  away_score,
-  status,
-  competition,
-}: Props) => {
-  const isMatchOver = status === "FullTime" ? false : true;
-
+const MatchCardScore = ({ home_score, away_score, competition }: Props) => {
   const logoSrc = competition ? getCompetitionLogo(competition) : false;
 
   return (
@@ -35,12 +26,7 @@ const MatchCardScore = ({
         </div>
       )}
       <div className="w-full flex items-center justify-center">
-        <p
-          className={cn(
-            "font-bold text-3xl lg:text-2xl ",
-            isMatchOver ? "text-slate-300" : "text-slate-900 dark:text-white"
-          )}
-        >
+        <p className="font-bold text-3xl lg:text-2xl text-slate-900">
           {home_score} - {away_score}
         </p>
       </div>
@@ -49,13 +35,3 @@ const MatchCardScore = ({
 };
 
 export default MatchCardScore;
-
-/**
- * {logoSrc && (
-        <div className="bg-red-200">
-          
-        </div>
-      )}
-
-      
- */

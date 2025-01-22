@@ -5,7 +5,7 @@ import MatchCardList from "@/src/app/components/MatchCardList";
 const LayoutGrid = () => {
   return (
     <div className="pb-4">
-      <div className="pt-4 h-28">
+      <div className="pt-4 h-36">
         <PastMatchList />
       </div>
       <div className="py-4 px-4">

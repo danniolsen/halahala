@@ -17,7 +17,6 @@ const PastMatchCard = ({
       <MatchCardScore
         home_score={home_score}
         away_score={away_score}
-        status="FullTime"
         competition={competition}
       />
       <MatchCardTeam team={away_team} />

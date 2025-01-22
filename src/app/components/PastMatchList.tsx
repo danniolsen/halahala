@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import fetcher from "@/src/app/utils/fetcher";
-import { MatchType } from "../types/Match.type";
+import { MatchType } from "@/src/app/types/Match.type";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import cn from "@/src/app/utils/cn";
