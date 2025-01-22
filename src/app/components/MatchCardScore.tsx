@@ -37,8 +37,8 @@ const MatchCardScore = ({
       <div className="w-full flex items-center justify-center">
         <p
           className={cn(
-            "font-bold text-3xl lg:text-2xl",
-            isMatchOver ? "text-slate-300" : "text-slate-900"
+            "font-bold text-3xl lg:text-2xl ",
+            isMatchOver ? "text-slate-300" : "text-slate-900 dark:text-white"
           )}
         >
           {home_score} - {away_score}

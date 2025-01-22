@@ -20,7 +20,7 @@ const MatchCardTeam = ({ team }: Props) => {
       </div>
 
       <div className="flex justify-center">
-        <p className="text-xs font-bold text-slate-600 text-center line-clamp-1">
+        <p className="text-xs font-bold text-slate-600 dark:text-white text-center line-clamp-1">
           {team?.nickname}
         </p>
       </div>
