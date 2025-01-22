@@ -1,6 +1,6 @@
 {
   "name": "halahala",
-  "version": "0.1.0",
+  "version": "0.8.4",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -9,7 +9,8 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "deploy": "firebase deploy"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.64.2",
