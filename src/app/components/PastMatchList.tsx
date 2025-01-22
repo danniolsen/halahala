@@ -1,19 +1,43 @@
 "use client";
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import fetcher from "@/src/app/utils/fetcher";
 import { MatchType } from "../types/Match.type";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
+import MatchCardTeam from "./MatchCardTeam";
+import MatchCardScore from "./MatchCardScore";
+import cn from "@/src/app/utils/cn";
 
 const limit = 6;
-
 const PastMatchList = () => {
-  const [sliderRef] = useKeenSlider(
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const [sliderRef, instanceRef] = useKeenSlider(
     {
+      slideChanged(slider) {
+        setCurrentSlide(slider.track.details.rel);
+      },
+      created() {
+        setLoaded(true);
+      },
+      rubberband: true,
       initial: 0,
+
       slides: {
-        spacing: 10,
-        perView: 2.1,
+        perView: 1,
+        origin: "center",
+      },
+      breakpoints: {
+        "(min-width: 640px)": {
+          slides: { perView: 1.2, spacing: 10 },
+        },
+        "(min-width: 768px)": {
+          slides: { perView: 2, spacing: 10 },
+        },
+        "(min-width: 1024px)": {
+          slides: { perView: 3, spacing: 10 },
+        },
       },
     },
     [] // plugins
@@ -28,24 +52,62 @@ const PastMatchList = () => {
   const matches: MatchType[] = data?.matches;
 
   return (
-    <div ref={sliderRef} className="keen-slider">
-      {matches?.map(
-        ({ id, home_team, home_score, away_team, away_score, competition }) => {
-          return (
-            <div key={id} className="keen-slider__slide ">
-              <PastMatchCard
-                key={id}
-                home_team={home_team}
-                home_score={home_score}
-                away_team={away_team}
-                away_score={away_score}
-                competition={competition}
-              />
+    <>
+      {!isFetching && (
+        <>
+          <div className="relative">
+            <div ref={sliderRef} className="keen-slider">
+              {matches?.map(
+                ({
+                  id,
+                  home_team,
+                  home_score,
+                  away_team,
+                  away_score,
+                  competition,
+                }) => {
+                  return (
+                    <div
+                      key={id}
+                      className="keen-slider__slide max-md:first:pl-4 max-lg:last:pr-4"
+                    >
+                      <PastMatchCard
+                        key={id}
+                        home_team={home_team}
+                        home_score={home_score}
+                        away_team={away_team}
+                        away_score={away_score}
+                        competition={competition}
+                      />
+                    </div>
+                  );
+                }
+              )}
             </div>
-          );
-        }
+          </div>
+          <div className="sm:hidden">
+            {loaded && instanceRef.current && (
+              <div className="flex py-2 justify-center space-x-2">
+                {[...Array(matches.length).keys()].map((index) => {
+                  return (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        instanceRef.current?.moveToIdx(index);
+                      }}
+                      className={cn(
+                        "w-2 h-2 rounded-full",
+                        currentSlide === index ? "bg-gray-400" : "bg-gray-200"
+                      )}
+                    />
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </>
       )}
-    </div>
+    </>
   );
 };
 
@@ -60,5 +122,15 @@ const PastMatchCard = ({
   away_score,
   competition,
 }: PastMatchType) => {
-  return <div className="bg-white p-4 rounded-lg"></div>;
+  return (
+    <div className="bg-white grid grid-cols-5 p-4 rounded-lg">
+      <MatchCardTeam team={home_team} />
+      <MatchCardScore
+        home_score={home_score}
+        away_score={away_score}
+        status="FullTime"
+      />
+      <MatchCardTeam team={away_team} />
+    </div>
+  );
 };
