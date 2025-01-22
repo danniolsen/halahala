@@ -5,9 +5,8 @@ import fetcher from "@/src/app/utils/fetcher";
 import { MatchType } from "../types/Match.type";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import MatchCardTeam from "./MatchCardTeam";
-import MatchCardScore from "./MatchCardScore";
 import cn from "@/src/app/utils/cn";
+import PastMatchCard from "@/src/app/components/PastMatchCard";
 
 const limit = 6;
 const PastMatchList = () => {
@@ -112,25 +111,3 @@ const PastMatchList = () => {
 };
 
 export default PastMatchList;
-
-type PastMatchType = Omit<MatchType, "date" | "status" | "venue">;
-
-const PastMatchCard = ({
-  home_team,
-  home_score,
-  away_team,
-  away_score,
-  competition,
-}: PastMatchType) => {
-  return (
-    <div className="bg-white grid grid-cols-5 p-4 rounded-lg">
-      <MatchCardTeam team={home_team} />
-      <MatchCardScore
-        home_score={home_score}
-        away_score={away_score}
-        status="FullTime"
-      />
-      <MatchCardTeam team={away_team} />
-    </div>
-  );
-};

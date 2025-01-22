@@ -6,8 +6,6 @@ const returnFormat: DateReturnType = {
 };
 
 const checkDateRange = (inputDate: Date): DateReturnType => {
-  const now = new Date(); // Current time
-
   // return dash if date is invalid
   if (!(inputDate instanceof Date) || isNaN(inputDate.getTime())) {
     return {

@@ -43,7 +43,7 @@ const getCompetitionColor = (competition: CompetitionType): string => {
 };
 
 const getCompetitionLogo = (competition: CompetitionType): string => {
-  return competitionMap[competition?.name]?.logo || NoLogo;
+  return competitionMap[competition?.name]?.logo || null;
 };
 
 export { getCompetitionName, getCompetitionColor, getCompetitionLogo };
