@@ -4,7 +4,6 @@ import ChampionsLogo from "../../../public/champions-league.svg";
 import CopaReyLogo from "../../../public/copa-del-rey.svg";
 import CopaEspanaLogo from "../../../public/copa-de-espana.svg";
 import FifaCupLogo from "../../../public/fifa-copa.svg";
-import NoLogo from "../../../public/noLogo.svg";
 
 const competitionMap = {
   "LALIGA EA SPORTS": {

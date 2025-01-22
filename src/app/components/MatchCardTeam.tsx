@@ -15,6 +15,7 @@ const MatchCardTeam = ({ team }: Props) => {
           height={80}
           alt={`${team.name}-team-name`}
           priority
+          unoptimized
         />
       </div>
 
