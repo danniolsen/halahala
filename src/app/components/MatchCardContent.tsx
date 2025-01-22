@@ -12,10 +12,10 @@ const MatchCardContent = ({ date, children, venue }: Props) => {
   const dateAndTime: DateReturnType = checkDateRange(new Date(date));
 
   return (
-    <section className="rounded-xl bg-white m-1">
+    <section className="rounded-xl bg-white dark:bg-black m-1">
       <div className="text-center text-gray-500 text-xs py-2">
-        <p className="font-semibold">{dateAndTime?.date}</p>
-        <p>{dateAndTime?.time}</p>
+        <p className="font-semibold dark:text-white">{dateAndTime?.date}</p>
+        <p className="dark:text-white">{dateAndTime?.time}</p>
       </div>
 
       <div className="pb-4 grid grid-cols-5">{children}</div>
