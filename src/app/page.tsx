@@ -6,10 +6,10 @@ import {
 import LayoutGrid from "@/src/app/components/LayoutGrid";
 import fetcher from "@/src/app/utils/fetcher";
 
+const limit = 6;
+
 const Page = async () => {
   const queryClient = new QueryClient();
-
-  const limit = 6;
 
   await queryClient.prefetchQuery({
     queryKey: ["upcommingMatches", limit],

@@ -5,21 +5,18 @@ import { MatchType } from "../types/Match.type";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 
-const limit = 7;
+const limit = 6;
 
 const PastMatchList = () => {
   const [sliderRef] = useKeenSlider(
     {
+      initial: 0,
       slides: {
+        spacing: 10,
         perView: 2.1,
       },
-      slideChanged() {
-        console.log("slide changed");
-      },
     },
-    [
-      // add plugins here
-    ]
+    [] // plugins
   );
 
   const { data, isFetching } = useQuery({
@@ -32,17 +29,36 @@ const PastMatchList = () => {
 
   return (
     <div ref={sliderRef} className="keen-slider">
-      {matches?.map(({ id, home_score, away_score }) => {
-        return (
-          <div key={id} className="keen-slider__slide bg-red-200">
-            <p>
-              {home_score} - {away_score}
-            </p>
-          </div>
-        );
-      })}
+      {matches?.map(
+        ({ id, home_team, home_score, away_team, away_score, competition }) => {
+          return (
+            <div key={id} className="keen-slider__slide ">
+              <PastMatchCard
+                key={id}
+                home_team={home_team}
+                home_score={home_score}
+                away_team={away_team}
+                away_score={away_score}
+                competition={competition}
+              />
+            </div>
+          );
+        }
+      )}
     </div>
   );
 };
 
 export default PastMatchList;
+
+type PastMatchType = Omit<MatchType, "date" | "status" | "venue">;
+
+const PastMatchCard = ({
+  home_team,
+  home_score,
+  away_team,
+  away_score,
+  competition,
+}: PastMatchType) => {
+  return <div className="bg-white p-4 rounded-lg"></div>;
+};
