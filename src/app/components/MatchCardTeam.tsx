@@ -10,12 +10,14 @@ const MatchCardTeam = ({ team }: Props) => {
     <div className="col-span-2">
       <div className="flex justify-center">
         <Image
-          src={team?.shield?.resizes?.medium}
+          src={team?.shield?.resizes?.small}
           width={80}
           height={80}
           alt={`${team.name}-team-name`}
           priority
           unoptimized
+          placeholder="blur"
+          blurDataURL={team?.shield?.resizes?.xsmall}
         />
       </div>
 

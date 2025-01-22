@@ -15,7 +15,11 @@ const MatchCardHeader = ({ competition }: Props) => {
 
   return (
     <header className="py-2 px-4 rounded-t-xl flex justify-between items-center">
-      <p className="text-white font-semibold">{competitionName}</p>
+      <div className="bg-white dark:bg-slate-700 rounded-full flex items-center px-4 h-6">
+        <p className="text-slate-700 dark:text-white text-xs font-semibold">
+          {competitionName}
+        </p>
+      </div>
 
       <Image
         src={imageSrc}

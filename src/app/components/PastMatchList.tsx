@@ -91,6 +91,7 @@ const PastMatchList = () => {
                   return (
                     <button
                       key={index}
+                      aria-label={`Next slide button - slide ${index}`}
                       onClick={() => {
                         instanceRef.current?.moveToIdx(index);
                       }}
