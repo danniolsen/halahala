@@ -12,7 +12,7 @@ const MatchCardContent = ({ date, children, venue }: Props) => {
   const dateAndTime: DateReturnType = checkDateRange(new Date(date));
 
   return (
-    <section className="rounded-xl bg-gradient-to-r from-gray-200 to-gray-100">
+    <section className="rounded-xl bg-white m-1">
       <div className="text-center text-gray-500 text-xs py-2">
         <p className="font-semibold">{dateAndTime?.date}</p>
         <p>{dateAndTime?.time}</p>

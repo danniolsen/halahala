@@ -42,10 +42,7 @@ const MatchCardList = () => {
         }) => {
           const bgColor = getCompetitionColor(competition);
           return (
-            <section
-              key={id}
-              className={`${bgColor} rounded-t-2xl rounded-b-2xl`}
-            >
+            <section key={id} className={`${bgColor} rounded-2xl`}>
               <MatchCardHeader competition={competition} />
 
               <MatchCardContent date={date} venue={venue}>
