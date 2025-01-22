@@ -22,6 +22,7 @@ const MatchCardHeader = ({ competition }: Props) => {
         width={undefined}
         height={20}
         priority
+        unoptimized
         alt={`${competitionName} logo`}
       />
     </header>
