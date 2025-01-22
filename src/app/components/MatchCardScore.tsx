@@ -11,7 +11,7 @@ const MatchCardScore = ({ home_score, away_score, status }: Props) => {
 
   return (
     <div className="col-spart-3 flex justify-center items-center mt-2">
-      <p className={`font-bold text-3xl ${fontColor}`}>
+      <p className={`font-bold text-3xl lg:text-2xl ${fontColor}`}>
         {home_score} - {away_score}
       </p>
     </div>

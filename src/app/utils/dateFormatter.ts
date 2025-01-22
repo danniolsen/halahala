@@ -16,37 +16,32 @@ const checkDateRange = (inputDate: Date): DateReturnType => {
     };
   }
 
-  const inputTime = new Date(inputDate).getTime();
-  const rangeStart = now.getTime(); // Start range: current time
-  const range24 = rangeStart + 24 * 60 * 60 * 1000; // 24 hours from now is
-  const range48 = rangeStart + 48 * 60 * 60 * 1000; // 48 hours from now
+  const today = new Date();
+  const tomorrow = new Date();
+  tomorrow.setDate(today.getDate() + 1);
 
-  const format = new Date(inputDate);
+  // Normalize dates to avoid time differences
+  const normalizeDate = (date: Date) => {
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  };
 
-  // tix this when tomorrow is a new month or year
-  const isTodaTest =
-    format.getDay() === now.getDay() &&
-    format.getMonth() + 1 === now.getMonth() + 1;
-
-  const isTomorrowTest =
-    now.getDay() + 1 === format.getDay() &&
-    now.getMonth() + 1 === format.getMonth() + 1;
-
+  const normalizedToday = normalizeDate(today);
+  const normalizedTomorrow = normalizeDate(tomorrow);
+  const normalizedInput = normalizeDate(new Date(inputDate));
   const hours = inputDate.getHours().toString().padStart(2, "0");
   const minutes = inputDate.getMinutes().toString().padStart(2, "0");
 
-  const isToday = inputTime >= rangeStart && inputTime <= range24;
-  const isTomorrow = inputTime > range24 && inputTime <= range48;
+  const isToday = normalizedInput.getTime() === normalizedToday.getTime();
+  const isTomorrow = normalizedInput.getTime() === normalizedTomorrow.getTime();
   const isPastOrFuture = !isToday && !isTomorrow;
 
+  // set hour and minutes
   returnFormat.time = `${hours}:${minutes}`;
 
-  if (isTodaTest) returnFormat.date = "Today";
-  if (isTomorrowTest) returnFormat.date = "Tomorrow";
-  if (isPastOrFuture) {
-    // const day = inputDate.getDate().toString().padStart(2);
-    // const month = inputDate.getUTCMonth() + 1;
+  if (isToday) returnFormat.date = "Today";
+  if (isTomorrow) returnFormat.date = "Tomorrow";
 
+  if (isPastOrFuture) {
     const fullDate = new Intl.DateTimeFormat("en-UK", {
       dateStyle: "medium",
     }).format(inputDate);
