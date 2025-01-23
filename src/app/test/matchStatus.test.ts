@@ -6,7 +6,7 @@ describe("matchStatus", () => {
     it("should return the status text", () => {
       expect(getStatusText("PreMatch")).toBe("Pre match");
       expect(getStatusText("FirstHalf")).toBe("First half");
-      expect(getStatusText("HalfTime")).toBe("Half time");
+      expect(getStatusText("HalfTime")).toBe("Break");
       expect(getStatusText("SecondHalf")).toBe("Second half");
       expect(getStatusText("FullTime")).toBe("Full time");
     });

@@ -44,7 +44,8 @@ const PastMatchList = () => {
 
   const { data, isFetching } = useQuery({
     queryKey: ["playedMatches", limit],
-    queryFn: () => fetcher({ status: "played", orderType: "desc", limit: 5 }),
+    queryFn: () =>
+      fetcher({ status: "played", orderType: "desc", limit: limit }),
   });
 
   const matches: MatchType[] = data?.matches;

@@ -3,7 +3,7 @@ import { StatusType } from "@/src/app/types/Match.type";
 const statusMap = {
   PreMatch: { name: "Pre match" },
   FirstHalf: { name: "First half" },
-  HalfTime: { name: "Half time" },
+  HalfTime: { name: "Break" },
   SecondHalf: { name: "Second half" },
   FullTime: { name: "Full time" },
 };
