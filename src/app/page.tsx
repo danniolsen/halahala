@@ -4,23 +4,22 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 import LayoutGrid from "@/src/app/components/LayoutGrid";
-import fetcher from "@/src/app/utils/fetcher";
+import { fetchMatches } from "@/src/app/utils/fetcher";
 
 const limit = 6;
+const queryClient = new QueryClient();
 
 const Page = async () => {
-  const queryClient = new QueryClient();
-
   await queryClient.prefetchQuery({
     queryKey: ["upcommingMatches", limit],
     queryFn: () =>
-      fetcher({ status: "notplayed", orderType: "asc", limit: limit }),
+      fetchMatches({ status: "notplayed", orderType: "asc", limit: limit }),
   });
 
   await queryClient.prefetchQuery({
     queryKey: ["playedMatches", limit],
     queryFn: () =>
-      fetcher({ status: "played", orderType: "desc", limit: limit }),
+      fetchMatches({ status: "played", orderType: "desc", limit: limit }),
   });
 
   return (

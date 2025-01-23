@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import fetcher from "@/src/app/utils/fetcher";
+import { fetchMatches } from "@/src/app/utils/fetcher";
 import { MatchType } from "@/src/app/types/Match.type";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
@@ -45,7 +45,7 @@ const PastMatchList = () => {
   const { data, isFetching } = useQuery({
     queryKey: ["playedMatches", limit],
     queryFn: () =>
-      fetcher({ status: "played", orderType: "desc", limit: limit }),
+      fetchMatches({ status: "played", orderType: "desc", limit: limit }),
   });
 
   const matches: MatchType[] = data?.matches;
@@ -70,9 +70,9 @@ const PastMatchList = () => {
                       key={id}
                       className="keen-slider__slide max-md:first:pl-4 max-lg:last:pr-4"
                     >
-                      <p>{id}</p>
                       <PastMatchCard
                         key={id}
+                        id={id}
                         home_team={home_team}
                         home_score={home_score}
                         away_team={away_team}
@@ -88,7 +88,7 @@ const PastMatchList = () => {
           <div className="sm:hidden">
             {loaded && instanceRef.current && (
               <div className="flex py-2 justify-center space-x-2">
-                {[...Array(matches.length).keys()].map((index) => {
+                {[...Array(matches?.length).keys()].map((index) => {
                   return (
                     <button
                       key={index}
