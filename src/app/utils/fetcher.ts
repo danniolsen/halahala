@@ -4,7 +4,7 @@ type Props = {
   limit?: number;
 };
 
-const seasonYear = "2023";
+const seasonYear = "2024";
 const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 const subscriptionKey = process.env.NEXT_PUBLIC_SUBSCRIPTION_KEY;
 const teamSlug = process.env.NEXT_PUBLIC_TEAM_SLUG;

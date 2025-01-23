@@ -20,11 +20,18 @@ describe("Should test that date formatter displays correctly", () => {
   });
 
   test("Should return a dash is input date is invalid", () => {
-    // @ts-expect-error test with null (wrong type)
-    expect(dateFormatter(null)).toEqual({ date: "-", time: "" });
-    // @ts-expect-error test undefined null (wrong type)
-    expect(dateFormatter(undefined)).toEqual({ date: "-", time: "" });
-    // @ts-expect-error test with string (wrong type)
-    expect(dateFormatter("2025")).toEqual({ date: "-", time: "" });
+    expect(dateFormatter(null as unknown as Date)).toEqual({
+      date: "-",
+      time: "",
+    });
+
+    expect(dateFormatter(undefined as unknown as Date)).toEqual({
+      date: "-",
+      time: "",
+    });
+    expect(dateFormatter("2025" as unknown as Date)).toEqual({
+      date: "-",
+      time: "",
+    });
   });
 });

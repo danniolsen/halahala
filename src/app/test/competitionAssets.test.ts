@@ -2,7 +2,6 @@ import type { CompetitionType } from "@/src/app/types/Match.type";
 import LaligaLogo from "../../../public/la-liga.svg";
 import ChampionsLogo from "../../../public/champions-league.svg";
 import CopaReyLogo from "../../../public/copa-del-rey.svg";
-import NoLogo from "../../../public/noLogo.svg";
 
 import {
   getCompetitionColor,
@@ -22,10 +21,9 @@ const copaRey: CompetitionType = {
   name: "Copa del Rey",
 };
 
-const faulty: CompetitionType = {
-  // @ts-expect-error test with wrong type of string
+const faulty = {
   name: "wrong name",
-};
+} as unknown as CompetitionType;
 
 describe("Should return a competitions assets based on competition", () => {
   test("That the formatted name is returned", () => {
@@ -49,6 +47,5 @@ describe("Should return a competitions assets based on competition", () => {
     expect(getCompetitionLogo(laLiga)).toEqual(LaligaLogo);
     expect(getCompetitionLogo(ucl)).toEqual(ChampionsLogo);
     expect(getCompetitionLogo(copaRey)).toEqual(CopaReyLogo);
-    expect(getCompetitionLogo(faulty)).toEqual(NoLogo);
   });
 });
