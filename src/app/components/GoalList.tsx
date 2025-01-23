@@ -42,8 +42,8 @@ const GoalList = ({ matchId, homeTeamId, awayTeamId }: Props) => {
       <div className="col-span-1">
         {goalsByHomeTeam?.map(({ nickname, minutes }, index) => {
           return (
-            <div key={index} className="flex space-x-1 text-xs text-gray-600">
-              <p>{nickname}</p>
+            <div key={index} className="flex space-x-1 text-xs">
+              <p className="text-gray-600 dark:text-white">{nickname}</p>
 
               {minutes?.map((min: number) => (
                 <p key={min}>{min}&apos;</p>
@@ -58,7 +58,7 @@ const GoalList = ({ matchId, homeTeamId, awayTeamId }: Props) => {
           return (
             <div
               key={index}
-              className="flex space-x-1 text-xs text-gray-600 justify-end"
+              className="flex space-x-1 text-xs justify-end text-gray-600 dark:text-white"
             >
               <p className="text-right">{nickname}</p>
 

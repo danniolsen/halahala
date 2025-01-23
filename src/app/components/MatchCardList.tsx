@@ -17,6 +17,7 @@ const MatchCardList = () => {
     queryKey: ["upcommingMatches", limit],
     queryFn: () =>
       fetchMatches({ status: "notplayed", orderType: "asc", limit: limit }),
+    staleTime: 1000 * 60 * 5,
   });
 
   const filteredMatches: MatchType[] = data?.matches?.filter(
@@ -42,7 +43,7 @@ const MatchCardList = () => {
         }) => {
           const bgColor = getCompetitionColor(competition);
           return (
-            <section key={id} className={`${bgColor} rounded-2xl`}>
+            <section key={id} className={`${bgColor} rounded-2xl h-60`}>
               <MatchCardHeader competition={competition} />
 
               <MatchCardContent date={date} venue={venue} status={status}>

@@ -12,17 +12,17 @@ const limit = 6;
 const PastMatchList = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
+  const [options, setOptions] = useState({});
   const [sliderRef, instanceRef] = useKeenSlider(
     {
       slideChanged(slider) {
         setCurrentSlide(slider.track.details.rel);
       },
-      created() {
+      updated() {
         setLoaded(true);
       },
       rubberband: true,
       initial: 0,
-
       slides: {
         perView: 1,
         origin: "center",
@@ -54,7 +54,7 @@ const PastMatchList = () => {
     <>
       {!isFetching && (
         <>
-          <div className="relative">
+          <div className="relative h-40">
             <div ref={sliderRef} className="keen-slider">
               {matches?.map(
                 ({
@@ -110,6 +110,10 @@ const PastMatchList = () => {
       )}
     </>
   );
+};
+
+const PastMatchCardShimmer = () => {
+  return <div>shimmer</div>;
 };
 
 export default PastMatchList;

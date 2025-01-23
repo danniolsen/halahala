@@ -26,7 +26,7 @@ const MatchCardScore = ({ home_score, away_score, competition }: Props) => {
         </div>
       )}
       <div className="w-full flex items-center justify-center">
-        <p className="font-bold text-3xl lg:text-2xl text-slate-900">
+        <p className="font-bold text-3xl sm:text-2xl text-slate-900 dark:text-white">
           {home_score} - {away_score}
         </p>
       </div>

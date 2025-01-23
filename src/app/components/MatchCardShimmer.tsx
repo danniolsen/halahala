@@ -1,6 +1,6 @@
 const MatchCardShimmer = () => {
   return (
-    <div className="rounded-t-2xl rounded-b-2xl bg-gray-200">
+    <div className="rounded-t-2xl rounded-b-2xl bg-gray-200 h-60">
       {/* header */}
       <div className="h-10 py-2 px-4 rounded-t-xl flex justify-between items-center">
         <div className="animate-pulse h-5 w-1/2 rounded-md bg-white" />
