@@ -21,7 +21,7 @@ const MatchCardTeam = ({ team }: Props) => {
         />
       </div>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center px-2">
         <p className="text-xs font-bold text-slate-600 dark:text-white text-center line-clamp-1">
           {team?.nickname}
         </p>

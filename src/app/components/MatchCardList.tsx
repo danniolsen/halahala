@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import fetcher from "@/src/app/utils/fetcher";
+import { fetchMatches } from "@/src/app/utils/fetcher";
 import type { MatchType } from "@/src/app/types/Match.type";
 import MatchCardHeader from "@/src/app/components/MatchCardHeader";
 import { getCompetitionColor } from "@/src/app/utils/competitionAssets";
@@ -16,7 +16,7 @@ const MatchCardList = () => {
   const { data, isFetching } = useQuery({
     queryKey: ["upcommingMatches", limit],
     queryFn: () =>
-      fetcher({ status: "notplayed", orderType: "asc", limit: limit }),
+      fetchMatches({ status: "notplayed", orderType: "asc", limit: limit }),
   });
 
   const filteredMatches: MatchType[] = data?.matches?.filter(
