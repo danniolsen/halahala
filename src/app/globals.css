@@ -24,3 +24,9 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.keen-slider__slide {
+  min-width: calc(100% + 0px);
+  max-width: calc(100% + 0px);
+  transform: translate3d(0, 0, 0);
+}
