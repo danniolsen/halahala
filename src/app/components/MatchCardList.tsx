@@ -38,13 +38,14 @@ const MatchCardList = () => {
           home_score,
           venue,
           date,
+          status,
         }) => {
           const bgColor = getCompetitionColor(competition);
           return (
             <section key={id} className={`${bgColor} rounded-2xl`}>
               <MatchCardHeader competition={competition} />
 
-              <MatchCardContent date={date} venue={venue}>
+              <MatchCardContent date={date} venue={venue} status={status}>
                 <MatchCardTeam team={home_team} />
                 <MatchCardScore
                   home_score={home_score}

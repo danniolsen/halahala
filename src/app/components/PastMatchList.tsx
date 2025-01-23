@@ -44,8 +44,7 @@ const PastMatchList = () => {
 
   const { data, isFetching } = useQuery({
     queryKey: ["playedMatches", limit],
-    queryFn: () =>
-      fetcher({ status: "played", orderType: "desc", limit: limit }),
+    queryFn: () => fetcher({ status: "played", orderType: "desc", limit: 5 }),
   });
 
   const matches: MatchType[] = data?.matches;
@@ -70,6 +69,7 @@ const PastMatchList = () => {
                       key={id}
                       className="keen-slider__slide max-md:first:pl-4 max-lg:last:pr-4"
                     >
+                      <p>{id}</p>
                       <PastMatchCard
                         key={id}
                         home_team={home_team}

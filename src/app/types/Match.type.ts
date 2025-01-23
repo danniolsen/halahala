@@ -43,6 +43,9 @@ export type MatchType = {
   venue: VenueType;
 };
 
-export type StatusType = {
-  status?: "FirstHalf" | "HalfTime" | "SecondHalf" | "FullTime" | "PreMatch";
-};
+export type StatusType =
+  | "FirstHalf"
+  | "HalfTime"
+  | "SecondHalf"
+  | "FullTime"
+  | "PreMatch";
