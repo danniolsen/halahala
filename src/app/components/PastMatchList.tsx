@@ -12,7 +12,6 @@ const limit = 6;
 const PastMatchList = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  const [options, setOptions] = useState({});
   const [sliderRef, instanceRef] = useKeenSlider(
     {
       slideChanged(slider) {
@@ -110,10 +109,6 @@ const PastMatchList = () => {
       )}
     </>
   );
-};
-
-const PastMatchCardShimmer = () => {
-  return <div>shimmer</div>;
 };
 
 export default PastMatchList;
