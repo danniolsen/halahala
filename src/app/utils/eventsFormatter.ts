@@ -22,7 +22,6 @@ const filterEventTypesByCategories = ({
       (category: string) => event.match_event_kind.collection === category
     );
   });
-
   return filteredEvents;
 };
 
@@ -59,4 +58,8 @@ const groupGoalsByScore = (events: EventType[]): ScoreEventType[] => {
   return result;
 };
 
-export { filterEventTypesByCategories, assignGoalsToTeamByTeamId };
+export {
+  filterEventTypesByCategories,
+  assignGoalsToTeamByTeamId,
+  groupGoalsByScore,
+};
