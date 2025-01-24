@@ -1,7 +1,6 @@
 import {
   filterEventTypesByCategories,
   assignGoalsToTeamByTeamId,
-  groupGoalsByScore,
 } from "@/src/app/utils/eventsFormatter";
 import {
   rawEventData,
