@@ -13,9 +13,11 @@ const meta = {
   title: "MatchCard",
   component: MatchCard,
   tags: ["autodocs"],
-  argTypes: {},
-  parameters: {
-    layout: "padded",
+  argTypes: {
+    status: {
+      options: ["PreMatch", "FirstHalf", "HalfTime", "SecondHalf"],
+      control: { type: "radio" },
+    },
   },
 } satisfies Meta<typeof MatchCard>;
 
