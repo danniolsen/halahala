@@ -1,5 +1,5 @@
 import { getStatusText, isLive } from "@/src/app/utils/matchStatus";
-import { StatusType } from "../types/Match.type";
+import type { StatusType } from "@/src/app/types/Match.type";
 
 describe("matchStatus", () => {
   describe("getStatusText", () => {

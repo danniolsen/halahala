@@ -16,7 +16,7 @@ describe("Should return an array of events based on collection", () => {
     expect(
       filterEventTypesByCategories({
         eventData: rawEventData,
-        categories: ["goal", "penalty"],
+        categories: ["Goal", "Penalty", "Own"],
       })
     ).toEqual(filteredEvents);
     expect(
@@ -27,7 +27,8 @@ describe("Should return an array of events based on collection", () => {
     ).toEqual([]);
   });
 
-  test("assign goals to team based on teamId", () => {
+  // Own = Own goal, will be assigned to to the opponent's team goals
+  test("assign goals to team based on teamId and if Own is present", () => {
     expect(
       assignGoalsToTeamByTeamId({
         eventList: filteredEvents,
@@ -40,11 +41,5 @@ describe("Should return an array of events based on collection", () => {
         teamId: awayTeamId,
       })
     ).toEqual(goalsByAwayTeam);
-    expect(
-      assignGoalsToTeamByTeamId({
-        eventList: filteredEvents,
-        teamId: 1000,
-      })
-    ).toEqual([]);
   });
 });

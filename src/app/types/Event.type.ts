@@ -19,11 +19,11 @@ export type MatchEventType = {
 
 export type EventType = {
   lineup: LineUpType;
-  time: number;
   match_event_kind: MatchEventType;
+  clock: string;
 };
 
 export type ScoreEventType = {
   nickname?: string;
-  minutes: number[];
+  minutes: string[];
 };

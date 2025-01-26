@@ -1,6 +1,6 @@
-import { CompetitionType } from "../types/Match.type";
+import type { CompetitionType } from "@/src/app/types/Match.type";
 import Image from "next/image";
-import { getCompetitionLogo } from "../utils/competitionAssets";
+import { getCompetitionLogo } from "@/src/app/utils/competitionAssets";
 
 type Props = {
   home_score: number;

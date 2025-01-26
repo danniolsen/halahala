@@ -26,7 +26,7 @@ const GoalList = ({ matchId, homeTeamId, awayTeamId }: Props) => {
   // filter out events that are goals and penalties as goals.
   const filteredEventsByGoals: EventType[] = filterEventTypesByCategories({
     eventData: data,
-    categories: ["goal", "penalty"],
+    categories: ["Goal", "Penalty", "Own"],
   });
 
   const goalsByHomeTeam: ScoreEventType[] = assignGoalsToTeamByTeamId({

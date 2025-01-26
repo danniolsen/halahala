@@ -1,9 +1,10 @@
 import Image from "next/image";
-import { CompetitionType } from "@/src/app/types/Match.type";
+import type { CompetitionType } from "@/src/app/types/Match.type";
 import {
   getCompetitionName,
   getCompetitionLogo,
 } from "@/src/app/utils/competitionAssets";
+
 type Props = {
   competition: CompetitionType;
   isFetching?: boolean;
