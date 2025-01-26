@@ -17,7 +17,7 @@ const GoalsInfo = ({ goals, isAway }: Props) => {
           >
             <p className="text-gray-600 dark:text-white">{nickname}</p>
 
-            {minutes?.map((min: string, index: number) => (
+            {minutes?.map((min: string) => (
               <p className="text-gray-600 dark:text-white" key={min}>
                 {min}
               </p>

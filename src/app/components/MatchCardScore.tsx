@@ -16,8 +16,6 @@ const MatchCardScore = ({ home_score, away_score, competition }: Props) => {
   const logoSrc = competition ? getCompetitionLogo(competition) : false;
   const competitionColor = competition && getCompetitionColor(competition);
 
-  console.log(competitionColor);
-
   return (
     <div className="col-spart-3 gap-y-2 flex flex-col justify-center items-center mt-2">
       {logoSrc && (
