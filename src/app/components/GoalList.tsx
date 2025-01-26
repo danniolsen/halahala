@@ -5,6 +5,8 @@ import {
   filterEventTypesByCategories,
   assignGoalsToTeamByTeamId,
 } from "@/src/app/utils/eventsFormatter";
+import GoalsInfo from "@/src/app/components/GoalsInfo";
+
 type Props = {
   matchId: number;
   homeTeamId: number;
@@ -39,36 +41,9 @@ const GoalList = ({ matchId, homeTeamId, awayTeamId }: Props) => {
 
   return (
     <>
-      <div className="col-span-1">
-        {goalsByHomeTeam?.map(({ nickname, minutes }, index) => {
-          return (
-            <div key={index} className="flex space-x-1 text-xs">
-              <p className="text-gray-600 dark:text-white">{nickname}</p>
+      <GoalsInfo goals={goalsByHomeTeam} />
 
-              {minutes?.map((min: number) => (
-                <p key={min}>{min}&apos;</p>
-              ))}
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="col-span-1">
-        {goalsByAwayTeam?.map(({ nickname, minutes }, index) => {
-          return (
-            <div
-              key={index}
-              className="flex space-x-1 text-xs justify-end text-gray-600 dark:text-white"
-            >
-              <p className="text-right">{nickname}</p>
-
-              {minutes?.map((min: number) => (
-                <p key={min}>{min}&apos;</p>
-              ))}
-            </div>
-          );
-        })}
-      </div>
+      <GoalsInfo goals={goalsByAwayTeam} isAway />
     </>
   );
 };
