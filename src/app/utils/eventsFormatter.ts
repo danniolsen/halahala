@@ -29,7 +29,6 @@ const filterEventTypesByCategories = ({
   return filteredEvents;
 };
 
-// TODO: write unittest for this function
 const assignGoalsToTeamByTeamId = ({
   teamId,
   eventList,
@@ -56,7 +55,7 @@ const groupGoalsByScore = (events: EventType[]): ScoreEventType[] => {
   const grouped: Record<string, string[]> = {}; // Declare grouped as a record of nickname to array of numbers
 
   events?.forEach((event: EventType) => {
-    const nickname = event?.lineup?.person?.nickname || "Unknown"; // Provide a fallback for undefined nicknames
+    const nickname = event?.lineup?.person?.nickname || "";
 
     if (!grouped[nickname]) {
       grouped[nickname] = [];
@@ -66,7 +65,7 @@ const groupGoalsByScore = (events: EventType[]): ScoreEventType[] => {
   });
 
   const result = Object.entries(grouped).map(([nickname, minutes]) => ({
-    nickname: nickname === "Unknown" ? undefined : nickname, // Convert "Unknown" back to undefined if needed
+    nickname,
     minutes,
   }));
 
