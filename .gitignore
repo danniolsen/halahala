@@ -42,3 +42,4 @@ next-env.d.ts
 
 # firebase deployment files
 .firebase
+*storybook.log
