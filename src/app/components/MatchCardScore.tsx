@@ -1,6 +1,10 @@
 import type { CompetitionType } from "@/src/app/types/Match.type";
 import Image from "next/image";
-import { getCompetitionLogo } from "@/src/app/utils/competitionAssets";
+import cn from "@/src/app/utils/cn";
+import {
+  getCompetitionColor,
+  getCompetitionLogo,
+} from "@/src/app/utils/competitionAssets";
 
 type Props = {
   home_score: number;
@@ -10,6 +14,9 @@ type Props = {
 
 const MatchCardScore = ({ home_score, away_score, competition }: Props) => {
   const logoSrc = competition ? getCompetitionLogo(competition) : false;
+  const competitionColor = competition && getCompetitionColor(competition);
+
+  console.log(competitionColor);
 
   return (
     <div className="col-spart-3 gap-y-2 flex flex-col justify-center items-center mt-2">
@@ -17,7 +24,7 @@ const MatchCardScore = ({ home_score, away_score, competition }: Props) => {
         <div className="w-full flex items-center justify-center">
           <Image
             src={logoSrc}
-            className="bg-slate-700 p-1.5 rounded-lg"
+            className={cn("p-1.5 rounded-lg", competitionColor)}
             width={35}
             height={35}
             alt={`${competition?.name}-logo`}
