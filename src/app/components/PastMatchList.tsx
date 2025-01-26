@@ -53,7 +53,7 @@ const PastMatchList = () => {
     <>
       {!isFetching && (
         <>
-          <div className="relative h-40">
+          <div className="relative">
             <div ref={sliderRef} className="keen-slider">
               {matches?.map(
                 ({
@@ -85,7 +85,7 @@ const PastMatchList = () => {
             </div>
           </div>
           <div className="sm:hidden">
-            {loaded && instanceRef.current && (
+            {loaded && (
               <div className="flex py-2 justify-center space-x-2">
                 {[...Array(matches?.length).keys()].map((index) => {
                   return (

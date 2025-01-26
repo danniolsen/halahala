@@ -1,7 +1,7 @@
 import { MatchType } from "@/src/app/types/Match.type";
 import MatchCardScore from "@/src/app/components/MatchCardScore";
 import MatchCardTeam from "@/src/app/components/MatchCardTeam";
-import GoalList from "./GoalList";
+// import GoalList from "./GoalList";
 
 type PastMatchType = Omit<MatchType, "date" | "status" | "venue">;
 
@@ -15,7 +15,7 @@ const PastMatchCard = ({
 }: PastMatchType) => {
   return (
     <>
-      <div className="grid grid-cols-5 grid-row">
+      <div accessKey={id?.toString()} className="grid grid-cols-5 grid-row">
         <MatchCardTeam team={home_team} />
         <MatchCardScore
           home_score={home_score}
@@ -24,7 +24,7 @@ const PastMatchCard = ({
         />
         <MatchCardTeam team={away_team} />
       </div>
-      <div className="grid grid-cols-2 grid-row px-10 pt-2">
+      {/*<div className="grid grid-cols-2 grid-row px-10 pt-2">
         {id && home_team?.id && away_team?.id && (
           <GoalList
             matchId={id}
@@ -32,7 +32,7 @@ const PastMatchCard = ({
             awayTeamId={away_team?.id}
           />
         )}
-      </div>
+      </div>*/}
     </>
   );
 };
