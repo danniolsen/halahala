@@ -1,4 +1,4 @@
-import { EventType, ScoreEventType } from "@/src/app/types/Event.type";
+import type { EventType, ScoreEventType } from "@/src/app/types/Event.type";
 
 type Props = {
   eventData: {
@@ -12,6 +12,10 @@ type TeamGoalsProps = {
   eventList: EventType[];
 };
 
+// Own
+// Goal
+// Penalty
+
 // TODO: Write unittest for this function
 const filterEventTypesByCategories = ({
   eventData,
@@ -19,7 +23,7 @@ const filterEventTypesByCategories = ({
 }: Props): EventType[] => {
   const filteredEvents = eventData?.match_events.filter((event: EventType) => {
     return categories.some(
-      (category: string) => event.match_event_kind.collection === category
+      (category: string) => event.match_event_kind.name === category
     );
   });
   return filteredEvents;
@@ -30,16 +34,26 @@ const assignGoalsToTeamByTeamId = ({
   teamId,
   eventList,
 }: TeamGoalsProps): ScoreEventType[] => {
-  const eventListByTeam = eventList?.filter(
-    (event) => event?.lineup?.team?.id === teamId
-  );
+  const eventListByTeam = eventList?.filter((event) => {
+    const isOwnGoalType = event?.match_event_kind?.name === "Own";
+    const eventTeamId = event?.lineup?.team?.id;
+
+    // give goal to team if opponent has scored an own goal
+    // don't give goal to team who scored own goal
+    if (isOwnGoalType) {
+      return eventTeamId !== teamId;
+    }
+
+    return eventTeamId === teamId;
+  });
+
   const list = groupGoalsByScore(eventListByTeam);
   return list;
 };
 
 // TODO: write unittest for this function
 const groupGoalsByScore = (events: EventType[]): ScoreEventType[] => {
-  const grouped: Record<string, number[]> = {}; // Declare grouped as a record of nickname to array of numbers
+  const grouped: Record<string, string[]> = {}; // Declare grouped as a record of nickname to array of numbers
 
   events?.forEach((event: EventType) => {
     const nickname = event?.lineup?.person?.nickname || "Unknown"; // Provide a fallback for undefined nicknames
@@ -47,7 +61,8 @@ const groupGoalsByScore = (events: EventType[]): ScoreEventType[] => {
     if (!grouped[nickname]) {
       grouped[nickname] = [];
     }
-    grouped[nickname].push(event?.time);
+    grouped[nickname].push(event?.clock);
+    grouped;
   });
 
   const result = Object.entries(grouped).map(([nickname, minutes]) => ({

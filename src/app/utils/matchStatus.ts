@@ -1,4 +1,4 @@
-import { StatusType } from "@/src/app/types/Match.type";
+import type { StatusType } from "@/src/app/types/Match.type";
 
 const statusMap = {
   PreMatch: { name: "Pre match" },

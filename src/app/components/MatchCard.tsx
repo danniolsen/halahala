@@ -3,7 +3,7 @@ import MatchCardContent from "@/src/app/components/MatchCardContent";
 import MatchCardHeader from "@/src/app/components/MatchCardHeader";
 import MatchCardScore from "@/src/app/components/MatchCardScore";
 import MatchCardTeam from "@/src/app/components/MatchCardTeam";
-import { MatchType } from "@/src/app/types/Match.type";
+import type { MatchType } from "@/src/app/types/Match.type";
 
 const MatchCard = ({
   competition,

@@ -8,7 +8,7 @@ export const rawEventData = {
       id: 370501,
       match_event_kind: {
         id: 1,
-        name: "Goal",
+        name: "Penalty",
         collection: "goal",
       },
       lineup: {
@@ -170,6 +170,32 @@ export const rawEventData = {
       period: "SecondHalf",
       date_source: "2025-01-22T21:06:06+00:00",
     },
+    {
+      id: 368371,
+      match_event_kind: {
+        id: 3,
+        name: "Own",
+        collection: "goal",
+      },
+      lineup: {
+        team: {
+          id: 31,
+          competitions: [],
+        },
+        person: {
+          name: "Fábio Daniel Soares Silva",
+          nickname: "Fabio Silva",
+          firstname: "Fábio Daniel",
+          lastname: "Soares Silva",
+        },
+      },
+      time: 92,
+      minute: 92,
+      second: 0,
+      clock: "90+2",
+      period: "SecondHalf",
+      date_source: "2025-01-09T20:51:00+00:00",
+    },
   ],
 };
 
@@ -179,7 +205,7 @@ export const filteredEvents = [
     id: 370501,
     match_event_kind: {
       id: 1,
-      name: "Goal",
+      name: "Penalty",
       collection: "goal",
     },
     lineup: {
@@ -315,11 +341,38 @@ export const filteredEvents = [
     period: "SecondHalf",
     date_source: "2025-01-22T21:06:06+00:00",
   },
+  {
+    id: 368371,
+    match_event_kind: {
+      id: 3,
+      name: "Own",
+      collection: "goal",
+    },
+    lineup: {
+      team: {
+        id: 31,
+        competitions: [],
+      },
+      person: {
+        name: "Fábio Daniel Soares Silva",
+        nickname: "Fabio Silva",
+        firstname: "Fábio Daniel",
+        lastname: "Soares Silva",
+      },
+    },
+    time: 92,
+    minute: 92,
+    second: 0,
+    clock: "90+2",
+    period: "SecondHalf",
+    date_source: "2025-01-09T20:51:00+00:00",
+  },
 ];
 
 export const goalsByHomeTeam = [
-  { nickname: "Rodrygo", minutes: [23, 34] },
-  { nickname: "Mbappé", minutes: [48] },
+  { nickname: "Rodrygo", minutes: ["23", "34"] },
+  { nickname: "Mbappé", minutes: ["48"] },
+  { nickname: "Fabio Silva", minutes: ["90+2"] },
 ];
 
-export const goalsByAwayTeam = [{ nickname: "Fabio Silva", minutes: [1] }];
+export const goalsByAwayTeam = [{ nickname: "Fabio Silva", minutes: ["1"] }];
