@@ -1,14 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchMatches } from "@/src/app/utils/fetcher";
 import type { MatchType } from "@/src/app/types/Match.type";
-import MatchCardHeader from "@/src/app/components/MatchCardHeader";
 import { getCompetitionColor } from "@/src/app/utils/competitionAssets";
-import MatchCardContent from "@/src/app/components/MatchCardContent";
-import MatchCardTeam from "@/src/app/components/MatchCardTeam";
-import MatchCardScore from "@/src/app/components/MatchCardScore";
 import MatchCardShimmer from "@/src/app/components/MatchCardShimmer";
+import MatchCard from "@/src/app/components/MatchCard";
 
-const limit = 7;
+const limit = 6;
 const currentYear = new Date().getFullYear();
 const yearThreshold = currentYear - 1;
 
@@ -28,7 +25,7 @@ const MatchCardList = () => {
   );
 
   return (
-    <>
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-4 px-4">
       {filteredMatches?.map(
         ({
           id,
@@ -41,19 +38,18 @@ const MatchCardList = () => {
           date,
           status,
         }) => {
-          const bgColor = getCompetitionColor(competition);
           return (
-            <section key={id} className={`${bgColor} rounded-2xl h-60`}>
-              <MatchCardHeader competition={competition} />
-
-              <MatchCardContent date={date} venue={venue} status={status}>
-                <MatchCardTeam team={home_team} />
-                <MatchCardScore
-                  home_score={home_score}
-                  away_score={away_score}
-                />
-                <MatchCardTeam team={away_team} />
-              </MatchCardContent>
+            <section key={id}>
+              <MatchCard
+                competition={competition}
+                date={date}
+                venue={venue}
+                status={status}
+                home_team={home_team}
+                home_score={home_score}
+                away_team={away_team}
+                away_score={away_score}
+              />
             </section>
           );
         }
@@ -63,7 +59,7 @@ const MatchCardList = () => {
         new Array(6).fill(null).map((_, index) => {
           return <MatchCardShimmer key={index} />;
         })}
-    </>
+    </div>
   );
 };
 

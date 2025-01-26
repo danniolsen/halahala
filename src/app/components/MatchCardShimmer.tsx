@@ -10,7 +10,7 @@ const MatchCardShimmer = () => {
       <div className="rounded-xl bg-white h-[188px]">
         {/* date and time*/}
         <div className="h-12 flex justify-center items-center">
-          <div className="animate-pulse bg-gray-200 rounded-lg w-24 h-7"></div>
+          <div className="animate-pulse bg-gray-200 rounded-lg w-24 h-7" />
         </div>
 
         {/* team badges */}
