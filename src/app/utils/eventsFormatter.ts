@@ -61,7 +61,6 @@ const groupGoalsByScore = (events: EventType[]): ScoreEventType[] => {
       grouped[nickname] = [];
     }
     grouped[nickname].push(event?.clock);
-    grouped;
   });
 
   const result = Object.entries(grouped).map(([nickname, minutes]) => ({
