@@ -15,18 +15,18 @@ const StandingsRow = ({
   points,
 }: StandingDataRecord) => {
   return (
-    <div className="grid grid-cols-9 grid-rows-1 text-slate-500 text-sm text-center">
+    <div className="grid grid-cols-9 grid-rows-1 text-slate-500 text-sm text-center py-2">
       <div className="text-center">
         <p className="font-semibold">{position}</p>
       </div>
       <div className="col-span-3">
-        <p className="text-left">{team?.nickname}</p>
+        <p className="text-left line-clamp-1">{team?.nickname}</p>
       </div>
       <div className="col-start-5">
         <p>{played}</p>
       </div>
       <div className="col-start-6">
-        <p>{won}</p>
+        <p className="font-light">{won}</p>
       </div>
       <div className="col-start-7">
         <p>{drawn}</p>

@@ -1,12 +1,12 @@
 const StandingsHeader = () => {
   return (
-    <div className="grid grid-cols-9 grid-rows-1 text-slate-500 text-sm text-center">
+    <div className="grid grid-cols-9 grid-rows-1 text-slate-500 text-sm text-center py-2">
       <div className="text-center">
         <p className="font-semibold">Club</p>
       </div>
       <div className="col-span-3"></div>
       <div className="col-start-5">
-        <p>MP</p>
+        <p>P</p>
       </div>
       <div className="col-start-6">
         <p>W</p>
