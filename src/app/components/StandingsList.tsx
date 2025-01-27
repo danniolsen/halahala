@@ -17,9 +17,8 @@ const StandingsList = ({ standings }: Props) => {
         {standings?.map(
           ({ position, team, played, won, drawn, lost, points }) => {
             return (
-              <div className="even:bg-slate-100 odd:bg-white">
+              <div key={position} className="even:bg-slate-100 odd:bg-white">
                 <StandingsRow
-                  key={position}
                   position={position}
                   team={team}
                   played={played}
@@ -27,6 +26,7 @@ const StandingsList = ({ standings }: Props) => {
                   drawn={drawn}
                   lost={lost}
                   points={points}
+                  listCount={standings?.length}
                 />
               </div>
             );

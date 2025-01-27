@@ -16,13 +16,45 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const StandingRow: Story = {
-  args: standingsTestData[0],
+  args: {
+    position: 12,
+    drawn: 2,
+    listCount: 20,
+    lost: 3,
+    points: 49,
+    played: 40,
+    team: {
+      nickname: "Real Madrid",
+    },
+    won: 50,
+  },
 };
 
 export const StandingRowUcl: Story = {
-  args: standingsTestData[1],
+  args: {
+    position: 1,
+    drawn: 2,
+    listCount: 20,
+    lost: 3,
+    points: 49,
+    played: 40,
+    team: {
+      nickname: "Real Madrid",
+    },
+    won: 50,
+  },
 };
-
 export const StandingRowRelegation: Story = {
-  args: standingsTestData[5],
+  args: {
+    position: 20,
+    drawn: 2,
+    listCount: 20,
+    lost: 3,
+    points: 49,
+    played: 40,
+    team: {
+      nickname: "Real Madrid",
+    },
+    won: 50,
+  },
 };
