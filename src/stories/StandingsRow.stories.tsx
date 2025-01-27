@@ -7,7 +7,7 @@ const meta = {
   title: "StandingsRow",
   component: StandingsRow,
   parameters: {
-    layout: "fullScreen",
+    layout: "fullscreen",
   },
   argTypes: {},
 } satisfies Meta<typeof StandingsRow>;
