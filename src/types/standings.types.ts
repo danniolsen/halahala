@@ -13,9 +13,9 @@ export type StandingDataRecord = {
   drawn: number;
   lost: number;
   position: number;
-  goals_for: number;
-  goals_against: number;
-  goal_difference: string;
+  goals_for?: number;
+  goals_against?: number;
+  goal_difference?: string;
   team: Omit<TeamType, "shield">;
   qualify?: QualifyType;
 };

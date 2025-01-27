@@ -12,7 +12,6 @@ import MatchCard from "@/src/app/components/MatchCard";
 const meta = {
   title: "MatchCard",
   component: MatchCard,
-  tags: ["autodocs"],
   argTypes: {
     status: {
       options: ["PreMatch", "FirstHalf", "HalfTime", "SecondHalf"],
