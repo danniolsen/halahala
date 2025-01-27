@@ -23,6 +23,7 @@ export const teamRealMadrid: TeamType = {
       xlarge: "",
     },
   },
+  color: "#FFF",
 };
 
 export const teamBrest: TeamType = {
@@ -42,6 +43,7 @@ export const teamBrest: TeamType = {
       xlarge: "",
     },
   },
+  color: "#F00",
 };
 
 // competitions
