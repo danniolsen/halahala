@@ -8,31 +8,40 @@ type Props = {
 
 const StandingsList = ({ standings }: Props) => {
   return (
-    <div className="relative">
-      <div className="fixed w-full bg-white">
-        <StandingsHeader />
-      </div>
+    <div>
+      <StandingsHeader />
 
-      <div className="pt-9 bg-red-200">
-        {standings?.map(
-          ({ position, team, played, won, drawn, lost, points }) => {
-            return (
-              <div key={position} className="even:bg-slate-100 odd:bg-white">
-                <StandingsRow
-                  position={position}
-                  team={team}
-                  played={played}
-                  won={won}
-                  drawn={drawn}
-                  lost={lost}
-                  points={points}
-                  listCount={standings?.length}
-                />
-              </div>
-            );
-          }
-        )}
-      </div>
+      {standings?.map(
+        ({
+          position,
+          team,
+          played,
+          won,
+          drawn,
+          lost,
+          points,
+          goals_for,
+          goals_against,
+          goal_difference,
+        }) => {
+          return (
+            <div key={position} className="even:bg-slate-200 odd:bg-gray-50">
+              <StandingsRow
+                position={position}
+                team={team}
+                played={played}
+                won={won}
+                drawn={drawn}
+                lost={lost}
+                points={points}
+                goals_for={goals_for}
+                goals_against={goals_against}
+                goal_difference={goal_difference}
+              />
+            </div>
+          );
+        }
+      )}
     </div>
   );
 };

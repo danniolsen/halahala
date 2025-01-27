@@ -40,4 +40,13 @@ const fetchMatchDetails = async ({ matchId }: DataProps) => {
   return result.json();
 };
 
-export { fetchMatches, fetchMatchDetails };
+const fetchStandings = async () => {
+  const requestUrl = `${baseUrl}/${details}/subscriptions/laliga-easports-${seasonYear}/standing?subscription-key=${detailsKey}`;
+
+  const result = await fetch(requestUrl, {
+    method: "GET",
+  });
+  return result.json();
+};
+
+export { fetchMatches, fetchMatchDetails, fetchStandings };

@@ -1,6 +1,6 @@
 const StandingsHeader = () => {
   return (
-    <div className="grid grid-cols-9 grid-rows-1 text-slate-500 text-sm text-center py-2">
+    <div className="grid grid-cols-9 md:grid-cols-12 grid-rows-1 text-slate-500 text-sm text-center py-2 bg-white">
       <div className="text-center">
         <p className="font-semibold">Club</p>
       </div>
@@ -17,7 +17,19 @@ const StandingsHeader = () => {
       <div className="col-start-8">
         <p>L</p>
       </div>
-      <div className="col-start-9">
+
+      <div className="max-md:hidden col-span-1">
+        <p>GF</p>
+      </div>
+
+      <div className="max-md:hidden col-span-1">
+        <p>GA</p>
+      </div>
+
+      <div className="max-md:hidden col-span-1">
+        <p>GD</p>
+      </div>
+      <div className="col-span-1">
         <p className="font-semibold">Pts</p>
       </div>
     </div>

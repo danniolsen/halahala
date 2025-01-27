@@ -1,6 +1,4 @@
 import { StandingDataRecord } from "@/src/types/standings.types";
-import cn from "@/src/utils/cn";
-import { getStandingBorder } from "@/src/utils/getStandingBorder";
 
 const StandingsRow = ({
   position,
@@ -10,15 +8,13 @@ const StandingsRow = ({
   drawn,
   lost,
   points,
-  listCount,
-}: StandingDataRecord & { listCount: number }) => {
-  const color = getStandingBorder(position, listCount);
-
-  console.log(color);
-
+  goals_for,
+  goals_against,
+  goal_difference,
+}: StandingDataRecord) => {
   return (
-    <div className={cn("", color, "border-l-2")}>
-      <div className="grid grid-cols-9 grid-rows-1 text-slate-500 text-sm text-center py-2">
+    <div>
+      <div className="grid grid-cols-9 md:grid-cols-12 grid-rows-1 text-slate-500 text-sm text-center py-2">
         <div className="text-center">
           <p className="font-semibold">{position}</p>
         </div>
@@ -37,7 +33,19 @@ const StandingsRow = ({
         <div className="col-start-8">
           <p>{lost}</p>
         </div>
-        <div>
+        <div className="max-md:hidden col-span-1">
+          <p>{goals_for}</p>
+        </div>
+
+        <div className="max-md:hidden col-span-1">
+          <p>{goals_against}</p>
+        </div>
+
+        <div className="max-md:hidden col-span-1">
+          <p>{goal_difference}</p>
+        </div>
+
+        <div className="col-span-1">
           <p className="font-bold">{points}</p>
         </div>
       </div>

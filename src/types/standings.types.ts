@@ -1,5 +1,3 @@
-import type { TeamType } from "@/src/types/Match.type";
-
 type StandingsTeamType = {
   id?: number;
   slug?: string;

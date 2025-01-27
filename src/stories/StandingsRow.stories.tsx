@@ -1,8 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
-import { standingsTestData } from "@/src/testData/standingsTestData";
 import StandingsRow from "@/src/app/components/StandingsRow";
-
+import { standingsTestData } from "../testData/standingsTestData";
 const meta = {
   title: "StandingsRow",
   component: StandingsRow,
@@ -15,46 +13,16 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const args = { listCount: 20, ...standingsTestData[8] };
+const argsUcl = { listCount: 20, ...standingsTestData[0] };
+const argsRel = { listCount: 20, ...standingsTestData[19] };
 export const StandingRow: Story = {
-  args: {
-    position: 12,
-    drawn: 2,
-    listCount: 20,
-    lost: 3,
-    points: 49,
-    played: 40,
-    team: {
-      nickname: "Real Madrid",
-    },
-    won: 50,
-  },
+  args: args,
 };
 
 export const StandingRowUcl: Story = {
-  args: {
-    position: 1,
-    drawn: 2,
-    listCount: 20,
-    lost: 3,
-    points: 49,
-    played: 40,
-    team: {
-      nickname: "Real Madrid",
-    },
-    won: 50,
-  },
+  args: argsUcl,
 };
 export const StandingRowRelegation: Story = {
-  args: {
-    position: 20,
-    drawn: 2,
-    listCount: 20,
-    lost: 3,
-    points: 49,
-    played: 40,
-    team: {
-      nickname: "Real Madrid",
-    },
-    won: 50,
-  },
+  args: argsRel,
 };
