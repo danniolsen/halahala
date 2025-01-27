@@ -1,4 +1,4 @@
-import type { MatchType } from "@/src/app/types/Match.type";
+import type { MatchType } from "@/src/types/Match.type";
 import MatchCardScore from "@/src/app/components/MatchCardScore";
 import MatchCardTeam from "@/src/app/components/MatchCardTeam";
 import GoalList from "@/src/app/components/GoalList";

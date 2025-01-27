@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchMatchDetails } from "@/src/app/utils/fetcher";
-import type { EventType, ScoreEventType } from "@/src/app/types/Event.type";
+import { fetchMatchDetails } from "@/src/utils/fetcher";
+import type { EventType, ScoreEventType } from "@/src/types/Event.type";
 import {
   filterEventTypesByCategories,
   assignGoalsToTeamByTeamId,
-} from "@/src/app/utils/eventsFormatter";
+} from "@/src/utils/eventsFormatter";
 import GoalsInfo from "@/src/app/components/GoalsInfo";
 
 type Props = {

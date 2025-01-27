@@ -1,7 +1,7 @@
 import {
   filterEventTypesByCategories,
   assignGoalsToTeamByTeamId,
-} from "@/src/app/utils/eventsFormatter";
+} from "@/src/utils/eventsFormatter";
 import {
   rawEventData,
   filteredEvents,
@@ -9,7 +9,7 @@ import {
   awayTeamId,
   goalsByHomeTeam,
   goalsByAwayTeam,
-} from "@/src/app/test/mockData/events";
+} from "@/src/testData/events";
 
 describe("Should return an array of events based on collection", () => {
   test("filter out goals by collection", () => {

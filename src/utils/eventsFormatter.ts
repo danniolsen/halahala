@@ -1,4 +1,4 @@
-import type { EventType, ScoreEventType } from "@/src/app/types/Event.type";
+import type { EventType, ScoreEventType } from "@/src/types/Event.type";
 
 type Props = {
   eventData: {

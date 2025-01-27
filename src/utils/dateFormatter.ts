@@ -1,4 +1,4 @@
-import type { DateReturnType } from "@/src/app/types/types";
+import type { DateReturnType } from "@/src/types/types";
 
 const returnFormat: DateReturnType = {
   date: "",

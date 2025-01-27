@@ -3,7 +3,7 @@ import type {
   MatchType,
   TeamType,
   VenueType,
-} from "@/src/app/types/Match.type";
+} from "@/src/types/Match.type";
 
 // teams
 export const teamRealMadrid: TeamType = {
