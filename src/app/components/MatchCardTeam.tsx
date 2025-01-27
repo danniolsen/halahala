@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { TeamType } from "@/src/app/types/Match.type";
+import type { TeamType } from "@/src/types/Match.type";
 
 type Props = {
   team: TeamType;

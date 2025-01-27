@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { fetchMatches } from "@/src/app/utils/fetcher";
-import type { MatchType } from "@/src/app/types/Match.type";
+import { fetchMatches } from "@/src/utils/fetcher";
+import type { MatchType } from "@/src/types/Match.type";
 import MatchCardShimmer from "@/src/app/components/MatchCardShimmer";
 import MatchCard from "@/src/app/components/MatchCard";
 

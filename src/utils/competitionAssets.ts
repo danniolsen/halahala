@@ -1,9 +1,9 @@
-import type { CompetitionType } from "@/src/app/types/Match.type";
-import LaligaLogo from "../../../public/la-liga.svg";
-import ChampionsLogo from "../../../public/champions-league.svg";
-import CopaReyLogo from "../../../public/copa-del-rey.svg";
-import CopaEspanaLogo from "../../../public/copa-de-espana.svg";
-import FifaCupLogo from "../../../public/fifa-copa.svg";
+import type { CompetitionType } from "@/src/types/Match.type";
+import LaligaLogo from "../../public/la-liga.svg";
+import ChampionsLogo from "../../public/champions-league.svg";
+import CopaReyLogo from "../../public/copa-del-rey.svg";
+import CopaEspanaLogo from "../../public/copa-de-espana.svg";
+import FifaCupLogo from "../../public/fifa-copa.svg";
 
 const competitionMap = {
   "LALIGA EA SPORTS": {

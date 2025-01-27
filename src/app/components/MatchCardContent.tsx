@@ -1,7 +1,7 @@
-import type { DateReturnType } from "@/src/app/types/types";
-import type { StatusType, VenueType } from "@/src/app/types/Match.type";
-import checkDateRange from "@/src/app/utils/dateFormatter";
-import { getStatusText, isLive } from "@/src/app/utils/matchStatus";
+import type { DateReturnType } from "@/src/types/types";
+import type { StatusType, VenueType } from "@/src/types/Match.type";
+import checkDateRange from "@/src/utils/dateFormatter";
+import { getStatusText, isLive } from "@/src/utils/matchStatus";
 
 type Props = {
   date: string;

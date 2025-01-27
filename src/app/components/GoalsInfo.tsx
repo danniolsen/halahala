@@ -1,5 +1,5 @@
-import type { ScoreEventType } from "@/src/app/types/Event.type";
-import cn from "@/src/app/utils/cn";
+import type { ScoreEventType } from "@/src/types/Event.type";
+import cn from "@/src/utils/cn";
 
 type Props = {
   goals: ScoreEventType[];

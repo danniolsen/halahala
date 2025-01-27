@@ -1,13 +1,13 @@
-import type { MatchType, StatusType } from "@/src/app/types/Match.type";
-import type { DateReturnType } from "@/src/app/types/types";
+import type { MatchType, StatusType } from "@/src/types/Match.type";
+import type { DateReturnType } from "@/src/types/types";
 import {
   getCompetitionColor,
   getCompetitionLogo,
-} from "@/src/app/utils/competitionAssets";
-import { getStatusText, isLive } from "@/src/app/utils/matchStatus";
+} from "@/src/utils/competitionAssets";
+import { getStatusText, isLive } from "@/src/utils/matchStatus";
 import Image from "next/image";
-import checkDateRange from "@/src/app/utils/dateFormatter";
-import cn from "@/src/app/utils/cn";
+import checkDateRange from "@/src/utils/dateFormatter";
+import cn from "@/src/utils/cn";
 
 const NewMatchCard = ({
   competition,
@@ -82,7 +82,7 @@ type GoalScoreProps = {
   status: StatusType;
   date: string;
 };
-
+// TODO: Move to own component
 const GoalScores = ({ homeScore, awayScore, status, date }: GoalScoreProps) => {
   const dateAndTime: DateReturnType = checkDateRange(new Date(date));
   const isMatchLive = isLive(status);
@@ -123,7 +123,7 @@ type TeamBadgeProps = {
   teamName: string;
   shieldBlur: string;
 };
-
+// TODO: Move to own component
 const TeamBadge = ({ shield, teamName, shieldBlur }: TeamBadgeProps) => {
   return (
     <div className="w-full flex flex-col items-center justify-center pb-4 px-2">

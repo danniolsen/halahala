@@ -1,13 +1,13 @@
-import type { CompetitionType } from "@/src/app/types/Match.type";
-import LaligaLogo from "../../../public/la-liga.svg";
-import ChampionsLogo from "../../../public/champions-league.svg";
-import CopaReyLogo from "../../../public/copa-del-rey.svg";
+import type { CompetitionType } from "@/src/types/Match.type";
+import LaligaLogo from "../../public/la-liga.svg";
+import ChampionsLogo from "../../public/champions-league.svg";
+import CopaReyLogo from "../../public/copa-del-rey.svg";
 
 import {
   getCompetitionColor,
   getCompetitionLogo,
   getCompetitionName,
-} from "@/src/app/utils/competitionAssets";
+} from "@/src/utils/competitionAssets";
 
 const laLiga: CompetitionType = {
   name: "LALIGA EA SPORTS",

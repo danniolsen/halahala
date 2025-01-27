@@ -3,7 +3,7 @@ import {
   competitionLaLiga,
   teamBrest,
   teamRealMadrid,
-} from "@/src/app/test/mockData/newMatch";
+} from "@/src/testData/newMatch";
 import PastMatchCard from "@/src/app/components/PastMatchCard";
 
 const meta = {

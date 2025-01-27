@@ -1,4 +1,4 @@
-import dateFormatter from "@/src/app/utils/dateFormatter";
+import dateFormatter from "@/src/utils/dateFormatter";
 
 const currentDate = new Date();
 currentDate.setHours(21, 0, 0);
