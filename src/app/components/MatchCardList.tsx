@@ -54,10 +54,11 @@ const MatchCardList = () => {
         }
       )}
 
-      {isFetching &&
-        new Array(6).fill(null).map((_, index) => {
-          return <MatchCardShimmer key={index} />;
-        })}
+      {isFetching ||
+        (isFetching &&
+          new Array(limit).fill(null).map((_, index) => {
+            return <MatchCardShimmer key={index} />;
+          }))}
     </div>
   );
 };

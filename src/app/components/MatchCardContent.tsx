@@ -17,7 +17,7 @@ const MatchCardContent = ({ date, children, venue, status }: Props) => {
   const matchStatus = isMatchLive && getStatusText(status);
 
   return (
-    <section className="rounded-xl bg-white dark:bg-black">
+    <section className="rounded-xl bg-white">
       {isMatchLive && (
         <div className="text-center text-gray-500 py-2 text-xs">
           <p className="animate-pulse text-green-600">Live</p>
