@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} antialiased w-svw h-svh`}>
+      <body className={`${roboto.className} antialiased w-svw h-svh relative`}>
         <AppHeader />
         <Providers>{children}</Providers>
         <Footer />

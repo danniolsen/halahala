@@ -19,5 +19,18 @@ export default {
       },
     },
   },
+  // Ensure that dynamic colors not purged
+  safelist: [
+    "bg-la-liga",
+    "bg-champions-league",
+    "bg-copa-del-rey",
+    "bg-super-copa-espana",
+    "bg-fifa-club",
+    "border-sky-500",
+    "border-amber-500",
+    "border-emerald-500",
+    "border-red-400",
+    "border-transparent",
+  ],
   plugins: [],
 } satisfies Config;

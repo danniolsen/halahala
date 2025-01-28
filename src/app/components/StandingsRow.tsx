@@ -1,4 +1,5 @@
 import { StandingDataRecord } from "@/src/types/standings.types";
+import cn from "@/src/utils/cn";
 
 const StandingsRow = ({
   position,
@@ -11,9 +12,10 @@ const StandingsRow = ({
   goals_for,
   goals_against,
   goal_difference,
-}: StandingDataRecord) => {
+  color,
+}: StandingDataRecord & { color: string }) => {
   return (
-    <div>
+    <div className={cn("border-l-4", color)}>
       <div className="grid grid-cols-9 md:grid-cols-12 grid-rows-1 text-slate-600 text-sm text-center py-2">
         <div className="text-center">
           <p className="font-semibold">{position}</p>
