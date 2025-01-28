@@ -4,9 +4,10 @@ import type { StandingDataRecord } from "@/src/types/standings.types";
 
 type Props = {
   standings: StandingDataRecord[];
+  isFetching?: boolean;
 };
 
-const StandingsList = ({ standings }: Props) => {
+const StandingsList = ({ standings, isFetching }: Props) => {
   return (
     <div>
       <StandingsHeader />
@@ -42,6 +43,16 @@ const StandingsList = ({ standings }: Props) => {
           );
         }
       )}
+
+      {isFetching &&
+        new Array(20).fill(null).map((_, index) => {
+          return (
+            <div
+              key={index}
+              className="even:bg-slate-200 odd:bg-gray-50 animate-pulse h-9"
+            />
+          );
+        })}
     </div>
   );
 };

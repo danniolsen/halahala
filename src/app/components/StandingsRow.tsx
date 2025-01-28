@@ -14,7 +14,7 @@ const StandingsRow = ({
 }: StandingDataRecord) => {
   return (
     <div>
-      <div className="grid grid-cols-9 md:grid-cols-12 grid-rows-1 text-slate-500 text-sm text-center py-2">
+      <div className="grid grid-cols-9 md:grid-cols-12 grid-rows-1 text-slate-600 text-sm text-center py-2">
         <div className="text-center">
           <p className="font-semibold">{position}</p>
         </div>
