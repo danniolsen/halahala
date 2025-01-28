@@ -13,9 +13,9 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const args = { listCount: 20, ...standingsTestData[8] };
-const argsUcl = { listCount: 20, ...standingsTestData[0] };
-const argsRel = { listCount: 20, ...standingsTestData[19] };
+const args = { color: "border-transparent", ...standingsTestData[8] };
+const argsUcl = { color: "border-sky-500", ...standingsTestData[0] };
+const argsRel = { color: "border-red-400", ...standingsTestData[19] };
 export const StandingRow: Story = {
   args: args,
 };
