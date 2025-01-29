@@ -6,7 +6,7 @@ import AppHeader from "@/src/app/components/AppHeader";
 import Footer from "@/src/app/components/Footer";
 
 const roboto = Roboto({
-  weight: ["100", "300", "400", "700"],
+  weight: ["100", "300", "400", "700", "500"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
