@@ -4,8 +4,8 @@ type Props = {
 
 const PageTitle = ({ title }: Props) => {
   return (
-    <div>
-      <h2>{title}</h2>
+    <div className="p-6 mb-4">
+      <h2 className="text-4xl font-bold break-words break-all">{title}</h2>
     </div>
   );
 };

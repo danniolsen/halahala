@@ -26,13 +26,13 @@ const NewMatchCard = ({
     <div className="rounded-2xl bg-white dark:bg-black border-slate-700 dark:border-white border-2 relative my-2">
       <div className="absolute -top-5 w-full">
         <div className="flex items-center justify-center">
-          <div className="dark:bg-black bg-white rounded-full p-2">
+          <div className="dark:bg-black bg-white rounded-full p-2 h-11 w-11 -mt-1">
             <Image
               src={logoSrc}
               width={15}
               height={15}
               alt="League icon"
-              className={cn("w-7 h-7 p-1.5 -mt-1 rounded-full", color)}
+              className={cn("w-7 h-7 p-1.5 rounded-full", color)}
               unoptimized
             />
           </div>
