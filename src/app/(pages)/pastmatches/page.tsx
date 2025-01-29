@@ -33,6 +33,7 @@ const PastMatches = () => {
           return (
             <section key={id}>
               <MatchCard
+                id={id}
                 competition={competition}
                 date={date}
                 venue={venue}

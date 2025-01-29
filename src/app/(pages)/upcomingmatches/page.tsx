@@ -4,6 +4,7 @@ import { fetchMatches } from "@/src/utils/fetcher";
 import type { MatchType } from "@/src/types/Match.type";
 import MatchCardShimmer from "@/src/components/MatchCardShimmer";
 import MatchCard from "@/src/components/MatchCard";
+import { EventType } from "@/src/types/Event.type";
 
 const limit = 7;
 const currentYear = new Date().getFullYear();
@@ -41,6 +42,7 @@ const MatchCardList = () => {
           return (
             <section key={id}>
               <MatchCard
+                id={id}
                 competition={competition}
                 date={date}
                 venue={venue}

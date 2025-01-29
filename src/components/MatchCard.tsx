@@ -7,9 +7,11 @@ import {
 import { getStatusText, isLive } from "@/src/utils/matchStatus";
 import Image from "next/image";
 import checkDateRange from "@/src/utils/dateFormatter";
+import GoalList from "@/src/components/GoalList";
 import cn from "@/src/utils/cn";
 
 const NewMatchCard = ({
+  id,
   competition,
   date,
   venue,
@@ -65,6 +67,13 @@ const NewMatchCard = ({
           />
         </div>
       </div>
+      {id && home_team?.id && away_team?.id && (
+        <GoalList
+          matchId={id}
+          homeTeamId={home_team.id}
+          awayTeamId={away_team.id}
+        />
+      )}
 
       <div className="px-4 mt-1 pb-2 w-full">
         <p className="text-xs text-slate-700 dark:text-white text-center">
