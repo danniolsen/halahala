@@ -1,11 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import AppHeader from "@/src/app/components/AppHeader";
+import Navigation from "@/src/components/Navigation";
 
 const meta = {
-  title: "AppHeader",
-  component: AppHeader,
-  argTypes: {},
-} satisfies Meta<typeof AppHeader>;
+  title: "Navigation",
+  component: Navigation,
+} satisfies Meta<typeof Navigation>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

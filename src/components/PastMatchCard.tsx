@@ -1,7 +1,7 @@
 import type { MatchType } from "@/src/types/Match.type";
-import MatchCardScore from "@/src/app/components/MatchCardScore";
-import MatchCardTeam from "@/src/app/components/MatchCardTeam";
-import GoalList from "@/src/app/components/GoalList";
+import MatchCardScore from "@/src/components/MatchCardScore";
+import MatchCardTeam from "@/src/components/MatchCardTeam";
+import GoalList from "@/src/components/GoalList";
 
 type PastMatchType = Omit<MatchType, "date" | "status" | "venue">;
 

@@ -6,7 +6,7 @@ import type { MatchType } from "@/src/types/Match.type";
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import cn from "@/src/utils/cn";
-import PastMatchCard from "@/src/app/components/PastMatchCard";
+import PastMatchCard from "@/src/components/PastMatchCard";
 
 const limit = 6;
 const PastMatchList = () => {
