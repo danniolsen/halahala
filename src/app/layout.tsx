@@ -13,7 +13,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "RMA - Matches",
+  title: "RMA - Matches ",
   description: "An overview of the previous and next matches",
 };
 
