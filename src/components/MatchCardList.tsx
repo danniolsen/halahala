@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchMatches } from "@/src/utils/fetcher";
 import type { MatchType } from "@/src/types/Match.type";
-import MatchCardShimmer from "@/src/app/components/MatchCardShimmer";
-import MatchCard from "@/src/app/components/MatchCard";
+import MatchCardShimmer from "@/src/components/MatchCardShimmer";
+import MatchCard from "@/src/components/MatchCard";
 
 const limit = 6;
 const currentYear = new Date().getFullYear();

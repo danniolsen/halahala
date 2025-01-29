@@ -5,7 +5,7 @@ import {
   filterEventTypesByCategories,
   assignGoalsToTeamByTeamId,
 } from "@/src/utils/eventsFormatter";
-import GoalsInfo from "@/src/app/components/GoalsInfo";
+import GoalsInfo from "@/src/components/GoalsInfo";
 
 type Props = {
   matchId: number;

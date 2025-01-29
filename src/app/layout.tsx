@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Providers from "@/src/app/providers";
 import "@/src/app/globals.css";
-import AppHeader from "@/src/app/components/AppHeader";
-import Footer from "@/src/app/components/Footer";
+import Navigation from "@/src/components/Navigation";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "700"],
@@ -24,10 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} antialiased w-svw h-svh relative`}>
-        <AppHeader />
+      <body className={`${roboto.className} antialiased w-svw h-svh`}>
         <Providers>{children}</Providers>
-        <Footer />
+        <Navigation />
       </body>
     </html>
   );

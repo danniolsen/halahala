@@ -1,6 +1,6 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import StandingsList from "@/src/app/components/StandingsList";
+import StandingsList from "@/src/components/StandingsList";
 import { fetchStandings } from "@/src/utils/fetcher";
 
 const StandingsPage = () => {

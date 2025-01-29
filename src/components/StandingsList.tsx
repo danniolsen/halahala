@@ -1,5 +1,5 @@
-import StandingsHeader from "@/src/app/components/StandingsHeader";
-import StandingsRow from "@/src/app/components/StandingsRow";
+import StandingsHeader from "@/src/components/StandingsHeader";
+import StandingsRow from "@/src/components/StandingsRow";
 import type { StandingDataRecord } from "@/src/types/standings.types";
 import { getStandingBorder } from "@/src/utils/getStandingBorder";
 

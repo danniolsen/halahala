@@ -4,7 +4,7 @@ import {
   teamBrest,
   teamRealMadrid,
 } from "@/src/testData/newMatch";
-import PastMatchCard from "@/src/app/components/PastMatchCard";
+import PastMatchCard from "@/src/components/PastMatchCard";
 
 const meta = {
   title: "PastMatchCard",

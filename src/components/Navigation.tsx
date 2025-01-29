@@ -11,15 +11,12 @@ type RouteType = {
 };
 
 const routes: RouteType[] = [
-  { id: 1, href: "/", label: "Home", aria: "home link button" },
-  {
-    id: 2,
-    href: "/standings",
-    label: "Standings and all that",
-    aria: "standings link button",
-  },
+  { id: 1, href: "/", label: "Upcoming", aria: "link to next matches" },
+  { id: 2, href: "/pastmatches", label: "Past", aria: "link to past matches" },
+  { id: 3, href: "/standings", label: "La Liga", aria: "Link standings" },
 ];
-export default function AppHeader() {
+
+const Navigation = () => {
   const pathname = usePathname();
   const [highlightStyle, setHighlightStyle] = useState({ left: 0, width: 0 });
   const linksRef = useRef<(HTMLParagraphElement | null)[]>([]);
@@ -37,9 +34,9 @@ export default function AppHeader() {
   }, [pathname]);
 
   return (
-    <div className="sticky top-0 z-50 w-full border-b border-white">
-      <div className="py-4 bg-background/5 backdrop-blur-lg supports-[backdrop-filter]:bg-background/5">
-        <div className="relative flex space-x-4 px-4">
+    <nav className="fixed bottom-0 left-0 z-50 w-full">
+      <div className="py-6 bg-background/5 backdrop-blur-lg supports-[backdrop-filter]:bg-background/5 border-t border-white">
+        <div className="relative flex space-x-4 px-4 items-center justify-center">
           {/* Animated background */}
           <div
             className="absolute top-0 left-0 h-full bg-gray-300 rounded-lg transition-all duration-500"
@@ -56,7 +53,7 @@ export default function AppHeader() {
                 ref={(el) => {
                   linksRef.current[index] = el;
                 }}
-                className="relative z-10 px-4 py-2 rounded-lg text-slate-700"
+                className="relative z-10 px-4 py-1 rounded-lg text-slate-700"
               >
                 {route.label}
               </p>
@@ -64,6 +61,8 @@ export default function AppHeader() {
           ))}
         </div>
       </div>
-    </div>
+    </nav>
   );
-}
+};
+
+export default Navigation;

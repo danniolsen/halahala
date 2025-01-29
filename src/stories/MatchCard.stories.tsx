@@ -7,7 +7,7 @@ import {
   teamRealMadrid,
   venueBrest,
 } from "@/src/testData/newMatch";
-import MatchCard from "@/src/app/components/MatchCard";
+import MatchCard from "@/src/components/MatchCard";
 
 const meta = {
   title: "MatchCard",

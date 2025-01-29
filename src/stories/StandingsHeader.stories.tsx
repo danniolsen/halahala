@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import StandingsHeader from "@/src/app/components/StandingsHeader";
+import StandingsHeader from "@/src/components/StandingsHeader";
 
 const meta = {
   title: "StandingsHeader",

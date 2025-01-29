@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import StandingsRow from "@/src/app/components/StandingsRow";
+import StandingsRow from "@/src/components/StandingsRow";
 import { standingsTestData } from "../testData/standingsTestData";
 const meta = {
   title: "StandingsRow",
