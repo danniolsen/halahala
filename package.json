@@ -10,7 +10,6 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "tsc": "tsc",
-    "deploy": "firebase deploy",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
