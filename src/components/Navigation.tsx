@@ -11,7 +11,12 @@ type RouteType = {
 };
 
 const routes: RouteType[] = [
-  { id: 1, href: "/", label: "Upcoming", aria: "link to next matches" },
+  {
+    id: 1,
+    href: "/upcomingmatches",
+    label: "Upcoming",
+    aria: "link to next matches",
+  },
   { id: 2, href: "/pastmatches", label: "Past", aria: "link to past matches" },
   { id: 3, href: "/standings", label: "La Liga", aria: "Link standings" },
 ];
