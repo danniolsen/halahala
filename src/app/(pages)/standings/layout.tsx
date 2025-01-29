@@ -1,3 +1,4 @@
+import PageTitle from "@/src/components/PageTitle";
 import { fetchStandings } from "@/src/utils/fetcher";
 import {
   dehydrate,
@@ -19,6 +20,7 @@ const StandingsLayout = async ({ children }: LayoutProps) => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
+      <PageTitle title="La Liga standings" />
       {children}
     </HydrationBoundary>
   );

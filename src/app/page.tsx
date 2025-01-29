@@ -1,26 +1,11 @@
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from "@tanstack/react-query";
-import LayoutGrid from "@/src/components/LayoutGrid";
-import { fetchMatches } from "@/src/utils/fetcher";
+import Link from "next/link";
 
-const limit = 6;
-const queryClient = new QueryClient();
-
-const Page = async () => {
-  await queryClient.prefetchQuery({
-    queryKey: ["upcommingMatches", limit],
-    queryFn: () =>
-      fetchMatches({ status: "notplayed", orderType: "asc", limit: limit }),
-  });
-
+const MainPage = () => {
   return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
-      <LayoutGrid />
-    </HydrationBoundary>
+    <div>
+      <Link href="/upcomingmatches">Go to site</Link>
+    </div>
   );
 };
 
-export default Page;
+export default MainPage;

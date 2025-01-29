@@ -24,7 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} antialiased w-svw h-svh`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <div className="pb-24">{children}</div>
+        </Providers>
         <Navigation />
       </body>
     </html>

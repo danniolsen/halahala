@@ -6,7 +6,7 @@ import {
   QueryClient,
 } from "@tanstack/react-query";
 
-const limit = 6;
+const limit = 7;
 const queryClient = new QueryClient();
 
 type LayoutProps = {
@@ -15,14 +15,14 @@ type LayoutProps = {
 
 const PastMatchesLayout = async ({ children }: LayoutProps) => {
   await queryClient.prefetchQuery({
-    queryKey: ["playedMatches", limit],
+    queryKey: ["upcommingMatches", limit],
     queryFn: () =>
-      fetchMatches({ status: "played", orderType: "desc", limit: limit }),
+      fetchMatches({ status: "notplayed", orderType: "asc", limit: limit }),
   });
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <PageTitle title="Past matches" />
+      <PageTitle title="Upcoming matches" />
       {children}
     </HydrationBoundary>
   );
