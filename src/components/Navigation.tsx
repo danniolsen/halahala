@@ -1,8 +1,9 @@
 "use client";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
+
 import cn from "@/src/utils/cn";
 import Icon from "@/src/components/Icon";
+import TransitionLink from "@/src/components/TransitionLink";
 import type { IconMapType } from "@/src/types/types";
 
 type RouteType = {
@@ -45,11 +46,7 @@ const Navigation = () => {
   return (
     <div className="h-svh flex flex-col justify-center">
       {routes.map((route) => (
-        <Link
-          key={route.href}
-          href={route.href}
-          className="my-1 items-center flex justify-center"
-        >
+        <TransitionLink key={route.href} href={route.href}>
           <div className="px-3 py-1 rounded-md">
             <Icon
               name={route.icon}
@@ -61,7 +58,7 @@ const Navigation = () => {
               )}
             />
           </div>
-        </Link>
+        </TransitionLink>
       ))}
     </div>
   );
