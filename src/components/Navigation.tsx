@@ -49,6 +49,7 @@ const Navigation = () => {
           key={route.href}
           href={route.href}
           className="my-1 items-center flex justify-center"
+          aria-label={route.aria}
         >
           <div className="px-3 py-1 rounded-md">
             <Icon
