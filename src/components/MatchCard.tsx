@@ -21,7 +21,7 @@ const NewMatchCard = ({
   const logoSrc = getCompetitionLogo(competition);
 
   return (
-    <div className="rounded-2xl bg-white dark:bg-gray-800 my-2">
+    <div className="rounded-2xl bg-white dark:bg-gray-800">
       <div className="w-full">
         <div className="flex items-center justify-center">
           <div className="dark:bg-black rounded-full p-2 h-11 w-11 -mt-1">

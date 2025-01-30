@@ -10,7 +10,7 @@ type Props = {
 
 const StandingsList = ({ standings, isFetching }: Props) => {
   return (
-    <div className="border-t-2">
+    <div>
       <StandingsHeader />
 
       {standings?.map(

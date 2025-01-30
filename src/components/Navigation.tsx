@@ -1,15 +1,15 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
 import Link from "next/link";
 import cn from "@/src/utils/cn";
 import Icon from "@/src/components/Icon";
+import type { IconMapType } from "@/src/types/types";
 
 type RouteType = {
   id: number;
   href: string;
   label: string;
-  icon: string;
+  icon: keyof IconMapType;
   aria: string;
 };
 
@@ -39,14 +39,8 @@ const routes: RouteType[] = [
 
 const Navigation = () => {
   const pathname = usePathname();
-  const [activeButton, setActiveButton] = useState(null);
 
   const isActive = (href: string) => pathname === href;
-
-  // change into listener for pathname
-  const handleClick = (id) => {
-    setActiveButton(id);
-  };
 
   return (
     <div className="h-svh flex flex-col justify-center">
