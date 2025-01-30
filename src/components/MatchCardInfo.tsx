@@ -1,20 +1,43 @@
 import Image from "next/image";
-import { TeamType } from "../types/Match.type";
+import { StatusType, TeamType } from "../types/Match.type";
+import { getStatusText, isLive } from "@/src/utils/matchStatus";
+import cn from "@/src/utils/cn";
 
 type Props = {
   homeTeam: TeamType;
   awayTeam: TeamType;
   homeScore: number;
   awayScore: number;
+  status: StatusType;
 };
 
-const MatchCardInfo = ({ homeTeam, awayTeam, homeScore, awayScore }: Props) => {
+const MatchCardInfo = ({
+  homeTeam,
+  awayTeam,
+  homeScore,
+  awayScore,
+  status,
+}: Props) => {
+  const isMatchLive = isLive(status);
+  const matchStatus = isMatchLive && getStatusText(status);
+
   return (
     <div className="grid grid-cols-3">
       <div>
         <TeamBadge team={homeTeam} />
       </div>
-      <div className="items-center flex justify-center">
+      <div
+        className={cn(
+          "items-center flex flex-col",
+          !isMatchLive ? "justify-center" : "space-y-4"
+        )}
+      >
+        {isMatchLive && (
+          <div className="text-center text-slate-700 text-xs">
+            <p className="animate-pulse text-green-600">Live</p>
+            <p className="font-semibold dark:text-white">{matchStatus}</p>
+          </div>
+        )}
         <p className="text-2xl font-semibold">
           {homeScore} - {awayScore}
         </p>
