@@ -19,12 +19,10 @@ const MatchCardHeader = ({ competition, matchDate }: Props) => {
   const { date, time } = checkDateRange(inputDate);
 
   return (
-    <div className="flex justify-between items-center text-white">
-      <div className="text-xs font-bold">
-        <p>
-          {date} - {time}
-        </p>
-      </div>
+    <div className="flex justify-between items-center text-white h-5">
+      <p className="text-xs font-bold">
+        {date} - {time}
+      </p>
 
       <Image
         src={logoSrc}

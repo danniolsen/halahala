@@ -10,7 +10,7 @@ type Props = {
 
 const MatchCardList = ({ matches, isFetching, limit }: Props) => {
   return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-2 px-4 pb-4">
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-2 px-2 md:px-4 pb-4">
       {matches?.map(
         ({
           id,

@@ -51,7 +51,7 @@ const Navigation = () => {
           className="my-1 items-center flex justify-center"
           aria-label={route.aria}
         >
-          <div className="px-3 py-1 rounded-md">
+          <div className="py-1 rounded-md">
             <Icon
               name={route.icon}
               className={cn(

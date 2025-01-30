@@ -9,7 +9,11 @@ const StandingsPage = () => {
     queryFn: fetchStandings,
   });
 
-  return <StandingsList standings={data?.standings} isFetching={isFetching} />;
+  return (
+    <div className="px-2">
+      <StandingsList standings={data?.standings} isFetching={isFetching} />
+    </div>
+  );
 };
 
 export default StandingsPage;
