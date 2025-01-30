@@ -34,12 +34,13 @@ const PagesLayout = async ({ children }: LayoutProps) => {
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <div className="h-svh w-svw flex bg-white dark:bg-gray-800">
-        <div className="flex-1 order-1 sm:order-2 overflow-scroll no-scrollbar max-sm:rounded-r-xl sm:rounded-l-3xl">
-          <div className="bg-gray-200 dark:bg-gray-900 min-h-full max-sm:rounded-r-xl sm:rounded-l-3xl">
+        <div className="flex-1 order-1 sm:order-2 overflow-scroll no-scrollbar max-sm:rounded-r-2xl sm:rounded-l-3xl">
+          <main className="bg-gray-200 dark:bg-gray-900 min-h-full max-sm:rounded-r-2xl sm:rounded-l-3xl px-2 md:px-6">
             {children}
-          </div>
+          </main>
         </div>
-        <div className="w-10 sm:w-20 order-2 sm:order-1 rounded-r-lg">
+
+        <div className="w-14 sm:w-20 order-2 sm:order-1 rounded-r-lg">
           <Navigation />
         </div>
       </div>
