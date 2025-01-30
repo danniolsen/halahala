@@ -22,7 +22,7 @@ const RootLayout = async ({
 }>) => {
   return (
     <html lang="en">
-      <body className={`${roboto.className} antialiased w-svw h-svh`}>
+      <body className={`${roboto.className} antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>
