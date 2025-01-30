@@ -44,10 +44,10 @@ const Navigation = () => {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <div className="h-svh flex flex-col justify-center">
+    <div className="h-svh fixed w-14 sm:w-20 flex flex-col justify-center">
       {routes.map((route) => (
         <TransitionLink key={route.href} href={route.href}>
-          <div className="px-3 py-1 rounded-md">
+          <div className="px-3 my-1 w-full items-center justify-center flex">
             <Icon
               name={route.icon}
               className={cn(

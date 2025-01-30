@@ -17,10 +17,6 @@ const MatchCard = ({
 }: MatchType) => {
   const bgColor = getCompetitionColor(competition);
 
-  // use id to navigate into details
-
-  console.log(status);
-
   return (
     <div key={id} className={cn("bg-white rounded-xl shadow-md", bgColor)}>
       <div className="px-4 py-2">
