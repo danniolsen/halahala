@@ -7,18 +7,18 @@ import {
   teamRealMadrid,
   venueBrest,
 } from "@/src/testData/newMatch";
-import MatchCard from "@/src/components/MatchCard";
+import MatchCardOld from "@/src/components/MatchCardOld";
 
 const meta = {
-  title: "MatchCard",
-  component: MatchCard,
+  title: "MatchCardOld",
+  component: MatchCardOld,
   argTypes: {
     status: {
       options: ["PreMatch", "FirstHalf", "HalfTime", "SecondHalf"],
       control: { type: "radio" },
     },
   },
-} satisfies Meta<typeof MatchCard>;
+} satisfies Meta<typeof MatchCardOld>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

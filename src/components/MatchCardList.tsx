@@ -26,6 +26,7 @@ const MatchCardList = ({ matches, isFetching, limit }: Props) => {
           return (
             <section key={id}>
               <MatchCard
+                id={id}
                 competition={competition}
                 date={date}
                 venue={venue}
