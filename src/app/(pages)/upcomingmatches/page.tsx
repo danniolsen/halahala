@@ -25,7 +25,7 @@ const MatchCardList = () => {
   );
 
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-4 px-4">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-2">
       {filteredMatches?.map(
         ({
           id,
