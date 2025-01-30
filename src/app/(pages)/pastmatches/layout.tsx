@@ -1,30 +1,15 @@
 import PageTitle from "@/src/components/PageTitle";
-import { fetchMatches } from "@/src/utils/fetcher";
-import {
-  dehydrate,
-  HydrationBoundary,
-  QueryClient,
-} from "@tanstack/react-query";
-
-const limit = 6;
-const queryClient = new QueryClient();
 
 type LayoutProps = {
   children: React.ReactNode;
 };
 
-const PastMatchesLayout = async ({ children }: LayoutProps) => {
-  await queryClient.prefetchQuery({
-    queryKey: ["playedMatches", limit],
-    queryFn: () =>
-      fetchMatches({ status: "played", orderType: "desc", limit: limit }),
-  });
-
+const PastMatchesLayout = ({ children }: LayoutProps) => {
   return (
-    <HydrationBoundary state={dehydrate(queryClient)}>
+    <div>
       <PageTitle title="Past matches" />
       {children}
-    </HydrationBoundary>
+    </div>
   );
 };
 

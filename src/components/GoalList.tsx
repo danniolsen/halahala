@@ -16,16 +16,12 @@ type Props = {
 const GoalList = ({ matchId, homeTeamId, awayTeamId }: Props) => {
   const isIdValid = typeof matchId === "number";
 
-  console.log("isIdValid ", isIdValid);
-
   const { data } = useQuery({
     queryKey: ["matchDetails", matchId],
     queryFn: () => fetchMatchDetails({ matchId: matchId }),
     enabled: isIdValid,
     networkMode: "offlineFirst",
   });
-
-  console.log(data);
 
   // filter out events that are goals and penalties as goals.
   const filteredEventsByGoals: EventType[] = filterEventTypesByCategories({

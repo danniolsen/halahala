@@ -4,7 +4,6 @@ import { fetchMatches } from "@/src/utils/fetcher";
 import type { MatchType } from "@/src/types/Match.type";
 import MatchCardShimmer from "@/src/components/MatchCardShimmer";
 import MatchCard from "@/src/components/MatchCard";
-import { EventType } from "@/src/types/Event.type";
 
 const limit = 7;
 const currentYear = new Date().getFullYear();
@@ -15,7 +14,7 @@ const MatchCardList = () => {
     queryKey: ["upcommingMatches", limit],
     queryFn: () =>
       fetchMatches({ status: "notplayed", orderType: "asc", limit: limit }),
-    staleTime: 1000 * 60 * 5,
+    // staleTime: 1000 * 60 * 5,
   });
 
   const filteredMatches: MatchType[] = data?.matches?.filter(

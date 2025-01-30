@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Providers from "@/src/app/providers";
 import "@/src/app/globals.css";
-import PageTitle from "../components/PageTitle";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "700"],
@@ -16,16 +15,18 @@ export const metadata: Metadata = {
   description: "An overview of the previous and next matches",
 };
 
-export default function RootLayout({
+const RootLayout = async ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="en">
-      <body className={`${roboto.className} antialiased w-svw h-svh `}>
+      <body className={`${roboto.className} antialiased w-svw h-svh`}>
         <Providers>{children}</Providers>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

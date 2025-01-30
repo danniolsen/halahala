@@ -39,8 +39,8 @@ const Navigation = () => {
   }, [pathname]);
 
   return (
-    <nav className="fixed bottom-0 left-0 z-50 w-full">
-      <div className="py-6 bg-background/5 backdrop-blur-lg supports-[backdrop-filter]:bg-background/5 border-t border-white">
+    <nav className="sticky top-0 left-0 z-50 w-full">
+      <div className="py-3 md:py-5 bg-background/5 backdrop-blur-lg supports-[backdrop-filter]:bg-background/5 border-t border-white">
         <div className="relative flex space-x-4 px-4 items-center justify-center">
           {/* Animated background */}
           <div
