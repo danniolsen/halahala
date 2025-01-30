@@ -1,6 +1,5 @@
 "use client";
-import MatchCard from "@/src/components/MatchCard";
-import MatchCardShimmer from "@/src/components/MatchCardShimmer";
+import MatchCardList from "@/src/components/MatchCardList";
 import { MatchType } from "@/src/types/Match.type";
 import { fetchMatches } from "@/src/utils/fetcher";
 import { useQuery } from "@tanstack/react-query";
@@ -17,42 +16,7 @@ const PastMatches = () => {
   const matches: MatchType[] = data?.matches;
 
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-2">
-      {matches?.map(
-        ({
-          id,
-          away_team,
-          home_team,
-          competition,
-          away_score,
-          home_score,
-          venue,
-          date,
-          status,
-        }) => {
-          return (
-            <section key={id}>
-              <MatchCard
-                id={id}
-                competition={competition}
-                date={date}
-                venue={venue}
-                status={status}
-                home_team={home_team}
-                home_score={home_score}
-                away_team={away_team}
-                away_score={away_score}
-              />
-            </section>
-          );
-        }
-      )}
-
-      {isFetching &&
-        new Array(limit).fill(null).map((_, index) => {
-          return <MatchCardShimmer key={index} />;
-        })}
-    </div>
+    <MatchCardList matches={matches} isFetching={isFetching} limit={limit} />
   );
 };
 

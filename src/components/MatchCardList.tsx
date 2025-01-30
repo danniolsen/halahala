@@ -1,32 +1,17 @@
-"use client";
-import { useQuery } from "@tanstack/react-query";
-import { fetchMatches } from "@/src/utils/fetcher";
 import type { MatchType } from "@/src/types/Match.type";
 import MatchCardShimmer from "@/src/components/MatchCardShimmer";
 import MatchCard from "@/src/components/MatchCard";
 
-const limit = 7;
-const currentYear = new Date().getFullYear();
-const yearThreshold = currentYear - 1;
+type Props = {
+  matches: MatchType[];
+  isFetching: boolean;
+  limit: number;
+};
 
-const MatchCardList = () => {
-  const { data, isFetching } = useQuery({
-    queryKey: ["upcommingMatches", limit],
-    queryFn: () =>
-      fetchMatches({ status: "notplayed", orderType: "asc", limit: limit }),
-    staleTime: 1000 * 60 * 5,
-  });
-
-  const filteredMatches: MatchType[] = data?.matches?.filter(
-    (match: MatchType) => {
-      const itemYear = new Date(match?.date).getFullYear();
-      return itemYear >= yearThreshold;
-    }
-  );
-
+const MatchCardList = ({ matches, isFetching, limit }: Props) => {
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-4 px-4">
-      {filteredMatches?.map(
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-2 px-2 md:px-4 pb-4">
+      {matches?.map(
         ({
           id,
           away_team,
@@ -41,6 +26,7 @@ const MatchCardList = () => {
           return (
             <section key={id}>
               <MatchCard
+                id={id}
                 competition={competition}
                 date={date}
                 venue={venue}
