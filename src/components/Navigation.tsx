@@ -44,7 +44,7 @@ const Navigation = () => {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <div className="h-svh fixed w-14 sm:w-20 flex flex-col justify-center">
+    <div className="flex p-4 sticky top-0 z-50 w-full">
       {routes.map((route) => (
         <TransitionLink key={route.href} href={route.href}>
           <div className="px-3 my-1 w-full items-center justify-center flex">

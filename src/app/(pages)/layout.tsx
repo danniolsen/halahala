@@ -11,7 +11,7 @@ type LayoutProps = {
 };
 
 const queryClient = new QueryClient();
-const limit = 7;
+const limit = 10;
 
 const PagesLayout = async ({ children }: LayoutProps) => {
   await queryClient.prefetchQuery({
@@ -33,15 +33,12 @@ const PagesLayout = async ({ children }: LayoutProps) => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <div className="h-svh w-svw flex bg-white dark:bg-gray-800">
-        <div className="flex-1 order-1 sm:order-2 no-scrollbar">
-          <main className="bg-gray-200 dark:bg-gray-900 min-h-full">
+      <div className="bg-white dark:bg-gray-800">
+        <Navigation />
+        <div className="h-svh flex no-scrollbar">
+          <main className="flex-1 bg-gray-200 dark:bg-gray-900 min-h-full">
             {children}
           </main>
-        </div>
-
-        <div className="w-14 sm:w-20 order-2 sm:order-1 rounded-r-lg">
-          <Navigation />
         </div>
       </div>
     </HydrationBoundary>

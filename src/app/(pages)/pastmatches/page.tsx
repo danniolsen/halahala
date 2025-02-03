@@ -4,7 +4,7 @@ import { MatchType } from "@/src/types/Match.type";
 import { fetchMatches } from "@/src/utils/fetcher";
 import { useQuery } from "@tanstack/react-query";
 
-const limit = 7;
+const limit = 10;
 const PastMatches = () => {
   const { data, isFetching } = useQuery({
     queryKey: ["playedMatches", limit],

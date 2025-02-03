@@ -22,7 +22,7 @@ const MatchCard = ({
       <div className="px-4 py-2">
         <MatchCardHeader matchDate={date} competition={competition} />
       </div>
-      <div className="bg-white rounded-xl p-4">
+      <div className="bg-white rounded-xl px-4 pt-4">
         <MatchCardInfo
           homeTeam={home_team}
           homeScore={home_score}
@@ -31,7 +31,7 @@ const MatchCard = ({
           status={status}
         />
 
-        <div className="text-center py-1">
+        <div className="text-center pt-3 pb-2">
           <p className="text-xs text-slate-400">{venue?.name}</p>
         </div>
       </div>

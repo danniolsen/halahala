@@ -4,7 +4,7 @@ import { fetchMatches } from "@/src/utils/fetcher";
 import type { MatchType } from "@/src/types/Match.type";
 import MatchCardList from "@/src/components/MatchCardList";
 
-const limit = 7;
+const limit = 10;
 const currentYear = new Date().getFullYear();
 const yearThreshold = currentYear - 1;
 
