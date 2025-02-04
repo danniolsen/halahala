@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto, Overpass } from "next/font/google";
+import { Overpass } from "next/font/google";
 import Providers from "@/src/app/providers";
 import "@/src/app/globals.css";
 
