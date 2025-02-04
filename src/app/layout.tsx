@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Roboto, Overpass } from "next/font/google";
 import Providers from "@/src/app/providers";
 import "@/src/app/globals.css";
 
-const roboto = Roboto({
+const overPass = Overpass({
   weight: ["100", "300", "400", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
@@ -22,7 +22,7 @@ const RootLayout = async ({
 }>) => {
   return (
     <html lang="en">
-      <body className={`${roboto.className} antialiased`}>
+      <body className={`${overPass.className} antialiased`}>
         <Providers>{children}</Providers>
       </body>
     </html>

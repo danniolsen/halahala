@@ -1,5 +1,5 @@
 import { IconContext } from "react-icons";
-import { BiCalendar, BiTask, BiListOl } from "react-icons/bi";
+import { BiCalendar, BiTask, BiListOl, BiInfoCircle } from "react-icons/bi";
 import type { IconMapType } from "@/src/types/types";
 
 type Props = {
@@ -13,6 +13,7 @@ const Icon = ({ name, className }: Props) => {
     upcomming: <BiCalendar />,
     previous: <BiTask />,
     league: <BiListOl />,
+    info: <BiInfoCircle />,
   };
 
   return (

@@ -7,4 +7,5 @@ export type IconMapType = {
   upcomming: React.ReactNode;
   previous: React.ReactNode;
   league: React.ReactNode;
+  info: React.ReactNode;
 };
