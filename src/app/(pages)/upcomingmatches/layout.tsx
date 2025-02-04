@@ -6,7 +6,7 @@ type LayoutProps = {
 
 const PastMatchesLayout = ({ children }: LayoutProps) => {
   return (
-    <div className="bg-gray-200">
+    <div>
       <PageTitle title="Upcoming matches" />
       {children}
     </div>
