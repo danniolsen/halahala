@@ -80,7 +80,7 @@ const Navigation = () => {
               className={cn(
                 "flex flex-col items-center space-y-1 transition-all duration-300",
                 isActive(route.href)
-                  ? "translate-y-0 scale-105 text-stone-600"
+                  ? "translate-y-0 scale-105 text-stone-600 dark:text-stone-200"
                   : "translate-y-1 scale-100 text-stone-500"
               )}
             >
