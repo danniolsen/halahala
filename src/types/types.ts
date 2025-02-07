@@ -9,3 +9,11 @@ export type IconMapType = {
   league: React.ReactNode;
   info: React.ReactNode;
 };
+
+export type RouteType = {
+  id: number;
+  href: string;
+  label: string;
+  icon: keyof IconMapType;
+  aria: string;
+};
