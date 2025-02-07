@@ -28,7 +28,10 @@ const StandingsList = ({ standings, isFetching }: Props) => {
         }) => {
           const color = getStandingBorder(position, standings?.length);
           return (
-            <div key={position} className="even:bg-slate-200 odd:bg-gray-50">
+            <div
+              key={position}
+              className="even:bg-slate-200 odd:bg-gray-50 dark:even:bg-slate-700 dark:odd:bg-gray-800"
+            >
               <StandingsRow
                 position={position}
                 team={team}

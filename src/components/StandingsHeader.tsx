@@ -1,6 +1,6 @@
 const StandingsHeader = () => {
   return (
-    <div className="grid grid-cols-9 md:grid-cols-12 grid-rows-1 text-slate-500 text-sm text-center py-2 bg-white">
+    <div className="grid grid-cols-9 md:grid-cols-12 grid-rows-1 text-slate-500 dark:text-slate-200 text-sm text-center py-2 bg-white dark:bg-gray-800">
       <div className="text-center">
         <p className="font-semibold">Club</p>
       </div>

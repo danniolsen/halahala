@@ -64,7 +64,7 @@ const TeamBadge = ({ team }: PropsTeam) => {
         priority
         alt={`${team?.nickname} logo`}
       />
-      <p className="text-xs text-slate-600 font-semibold line-clamp-1">
+      <p className="text-xs text-slate-600 dark:text-white font-semibold line-clamp-1">
         {team.nickname}
       </p>
     </div>

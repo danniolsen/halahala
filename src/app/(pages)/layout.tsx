@@ -34,7 +34,7 @@ const PagesLayout = async ({ children }: LayoutProps) => {
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
       <div>
-        <div className="h-svh flex no-scrollbar">
+        <div className="min-h-svh flex no-scrollbar">
           <main className="flex-1 dark:bg-gray-900 min-h-full">{children}</main>
         </div>
         <Navigation />
