@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { StatusType, TeamType } from "../types/Match.type";
+import { StatusType, TeamType } from "@/src/types/Match.type";
 import { getStatusText, isLive } from "@/src/utils/matchStatus";
 import cn from "@/src/utils/cn";
 
