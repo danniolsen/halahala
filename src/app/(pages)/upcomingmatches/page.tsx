@@ -8,9 +8,11 @@ const limit = 10;
 const currentYear = new Date().getFullYear();
 const yearThreshold = currentYear - 1;
 
+const today = new Date();
+
 const UpcommingMatches = () => {
-  const { data, isFetching } = useQuery({
-    queryKey: ["upcommingMatches", limit],
+  const { data, isFetching, isLoading } = useQuery({
+    queryKey: [`upcommingMatches-${today} ${limit}`],
     queryFn: () =>
       fetchMatches({ status: "notplayed", orderType: "asc", limit: limit }),
     // staleTime: 1000 * 60 * 5,
@@ -26,7 +28,9 @@ const UpcommingMatches = () => {
   const matches: MatchType[] = filteredMatches;
 
   return (
-    <MatchCardList matches={matches} isFetching={isFetching} limit={limit} />
+    <div>
+      <MatchCardList matches={matches} isFetching={isFetching} limit={limit} isLoading={isLoading}/>
+    </div>
   );
 };
 

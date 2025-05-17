@@ -12,10 +12,10 @@ type LayoutProps = {
 
 const queryClient = new QueryClient();
 const limit = 10;
-
+const today = new Date();
 const PagesLayout = async ({ children }: LayoutProps) => {
   await queryClient.prefetchQuery({
-    queryKey: ["upcommingMatches", limit],
+    queryKey: [`upcommingMatches-${today} ${limit}`],
     queryFn: () =>
       fetchMatches({ status: "notplayed", orderType: "asc", limit: limit }),
   });

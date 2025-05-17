@@ -6,9 +6,10 @@ type Props = {
   matches: MatchType[];
   isFetching: boolean;
   limit: number;
+  isLoading: boolean;
 };
 
-const MatchCardList = ({ matches, isFetching, limit }: Props) => {
+const MatchCardList = ({ matches, isFetching, limit, isLoading }: Props) => {
   return (
     <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-rows-1 gap-2 px-2 md:px-4 pb-4">
       {matches?.map(
@@ -41,7 +42,7 @@ const MatchCardList = ({ matches, isFetching, limit }: Props) => {
         }
       )}
 
-      {isFetching &&
+      {isFetching || isLoading && 
         new Array(limit).fill(null).map((_, index) => {
           return <MatchCardShimmer key={index} />;
         })}

@@ -4,7 +4,7 @@ type Props = {
   limit?: number;
 };
 
-const seasonYear = "2024";
+const seasonYear = new Date().getFullYear() - 1;
 const subscriptionKey = process.env.NEXT_PUBLIC_MATCHES_SUBSCRIPTION_KEY;
 const teamSlug = process.env.NEXT_PUBLIC_TEAM_SLUG;
 
@@ -25,7 +25,7 @@ const fetchMatches = async ({ status, orderType, limit }: Props) => {
   const requestUrl = `${matchesUrl}&status=${status}&orderType=${orderType}&limit=${limit}`;
 
   const result = await fetch(requestUrl, {
-    method: "GET",
+    method: "GET"
   });
   return result.json();
 };
@@ -34,7 +34,7 @@ const fetchMatchDetails = async ({ matchId }: DataProps) => {
   const requestUrl = `${baseUrl}/${details}/matches/${matchId}/events?contentLanguage=en&subscription-key=${detailsKey}`;
 
   const result = await fetch(requestUrl, {
-    method: "GET",
+    method: "GET"
   });
 
   return result.json();
@@ -44,8 +44,9 @@ const fetchStandings = async () => {
   const requestUrl = `${baseUrl}/${details}/subscriptions/laliga-easports-${seasonYear}/standing?subscription-key=${detailsKey}`;
 
   const result = await fetch(requestUrl, {
-    method: "GET",
+    method: "GET"
   });
+
   return result.json();
 };
 
